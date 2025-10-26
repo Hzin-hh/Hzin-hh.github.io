@@ -1,202 +1,210 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>计算机组成原理 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="计算机组成原理导论 计算机&#x2F;手机组成 计算机硬件能识别的数据——二进制0&#x2F;1用低&#x2F;高电平分别表示0&#x2F;1硬件间通过主板上的印刷电路，可以传递多个二进制数位，每个二进制数位称为1bit  一、计算机系统概述计算机系统&#x3D;硬件+软件 1.1 计算机的发展 软件：  系统软件——用来管理整个计算机系统（Eg.操作系统、数据库管理系统（DBMS）、标准程序库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理">
-<meta property="og:url" content="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="计算机组成原理导论 计算机&#x2F;手机组成 计算机硬件能识别的数据——二进制0&#x2F;1用低&#x2F;高电平分别表示0&#x2F;1硬件间通过主板上的印刷电路，可以传递多个二进制数位，每个二进制数位称为1bit  一、计算机系统概述计算机系统&#x3D;硬件+软件 1.1 计算机的发展 软件：  系统软件——用来管理整个计算机系统（Eg.操作系统、数据库管理系统（DBMS）、标准程序库">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnk98f.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnkhQS.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnE841.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnEtgK.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnEyCt.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnEz5R.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnVpP1.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/28/pVnVFKO.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68b9bddc58cb8da5c87e9853.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68b9be0f58cb8da5c87e98a3.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bade2058cb8da5c880e482.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68badf0458cb8da5c880e4e1.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68badf2858cb8da5c880e4fd.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68badfc958cb8da5c880e54c.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68badfdc58cb8da5c880e55a.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae00258cb8da5c880e565.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae01558cb8da5c880e56d.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnwfpt.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVn0SnU.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnB7Js.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnDsmT.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnDy0U.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnDonK.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnD77D.png">
-<meta property="og:image" content="https://s21.ax1x.com/2025/06/29/pVnDbAe.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae18158cb8da5c880e63e.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae0ee58cb8da5c880e5aa.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae25558cb8da5c880e6ea.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae27e58cb8da5c880e706.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae2a358cb8da5c880e71c.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae30658cb8da5c880e776.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae31a58cb8da5c880e7be.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae39358cb8da5c880e85a.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae3bc58cb8da5c880e871.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae3f958cb8da5c880e8f9.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae44458cb8da5c880e968.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae48458cb8da5c880e9c5.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae7cd58cb8da5c880ec9d.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae3d358cb8da5c880e89c.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae84558cb8da5c880ecf7.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae86058cb8da5c880ed3d.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68bae8b858cb8da5c880ee1b.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baeca458cb8da5c880f2f0.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baecc158cb8da5c880f315.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baecdf58cb8da5c880f332.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baeda658cb8da5c880f448.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baef2d58cb8da5c880f778.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baef6e58cb8da5c880f7f7.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68baefc458cb8da5c880f8b7.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be3db658cb8da5c8875d63.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be3e3258cb8da5c8875da2.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be3ed758cb8da5c8875df3.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be3eea58cb8da5c8875df8.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be412358cb8da5c8875f03.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be425558cb8da5c8875f3d.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be44a758cb8da5c88769b3.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be458158cb8da5c88769eb.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be45ad58cb8da5c88769fe.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be461158cb8da5c8876a21.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be46a258cb8da5c8876a67.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be46b358cb8da5c8876a6f.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be485f58cb8da5c8876b28.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be482158cb8da5c8876b15.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4b3158cb8da5c8876cff.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4cd358cb8da5c8876da8.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4d2b58cb8da5c8876dca.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4da458cb8da5c8876dfc.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4dcf58cb8da5c8876e09.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4e1258cb8da5c8876e1f.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4e7e58cb8da5c8876e34.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4efc58cb8da5c8876e56.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be4fb658cb8da5c8876e90.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be507b58cb8da5c8876ee4.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be50f858cb8da5c8876f04.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be526258cb8da5c8876f78.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be528c58cb8da5c8876f83.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be535658cb8da5c8876fd6.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be539c58cb8da5c8876fe8.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be543458cb8da5c8877014.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be551258cb8da5c8877049.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be558f58cb8da5c8877099.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be55a958cb8da5c88770a4.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be55c658cb8da5c88770a8.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be561058cb8da5c88770b7.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be6d4e58cb8da5c88785e0.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be6e5458cb8da5c8878dbf.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be6f6f58cb8da5c8878efc.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be709858cb8da5c8878fb9.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be70fc58cb8da5c8878fde.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be717c58cb8da5c887905c.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be722f58cb8da5c8879186.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be72c158cb8da5c887929e.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be73d858cb8da5c8879423.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be73b158cb8da5c88793ed.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be744858cb8da5c8879494.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be759c58cb8da5c8879af7.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be761358cb8da5c8879e5f.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be76d158cb8da5c887a3a8.png">
-<meta property="og:image" content="https://pic1.imgdb.cn/item/68be76eb58cb8da5c887a4a8.png">
-<meta property="article:published_time" content="2025-09-05T14:33:18.000Z">
-<meta property="article:modified_time" content="2025-09-21T09:47:45.000Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s21.ax1x.com/2025/06/28/pVnk98f.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>计算机组成原理 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="计算机组成原理"><meta name="application-name" content="计算机组成原理"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="计算机组成原理"><meta property="og:url" content="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="计算机组成原理导论 计算机&amp;#x2F;手机组成 计算机硬件能识别的数据——二进制0&amp;#x2F;1用低&amp;#x2F;高电平分别表示0&amp;#x2F;1硬件间通过主板上的印刷电路，可以传递多个二进制数位，每个二进制数位称为1bit  一、计算机系统概述计算机系统&amp;#x3D;硬件+软件 1.1 计算机的发展"><meta property="og:locale" content="en"><meta property="og:image" content="http://example.com/img/profile%20photo.jpg"><meta property="article:author" content="John Doe"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/img/profile%20photo.jpg"><meta name="description" content="计算机组成原理导论 计算机&amp;#x2F;手机组成 计算机硬件能识别的数据——二进制0&amp;#x2F;1用低&amp;#x2F;高电平分别表示0&amp;#x2F;1硬件间通过主板上的印刷电路，可以传递多个二进制数位，每个二进制数位称为1bit  一、计算机系统概述计算机系统&amp;#x3D;硬件+软件 1.1 计算机的发展"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: John Doe","link":"Link: ","source":"Source: Hexo","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Hexo',
+  title: '计算机组成原理',
+  postAI: '',
+  pageFillDescription: ' 计算机组成原理, 导论, 一、计算机系统概述, 1.1 计算机的发展, 1.2.1 计算机硬件的基本组成, 1.2.2 各个硬件的工作原理, 1.2.3 计算机软件, 1.2.4 计算机系统的层次结构, 1.2.5 计算机系统的工作原理, 1.3 计算机的性能指标, 二、数据的表示和运算, 2.1.1 进位计数制, 2.1.2+2.1.3 定点数的编码表示, 2.1.4_1 C语言中的整数类型及类型转换, 2.1.4_1 零扩展、符号扩展, 2.2.0_1 逻辑门电路（数字电路基础补充）, - 补充1：门电路的变形画法- 补充2：逻辑运算的优先级、常见公式, 2.2.0_2 多路选择器、三态门（数字电路基础补充）, 2.2.1_1 加法器, 2.2.1_3 算术逻辑单元ALU, 2.2.2 定点数的移位运算, 2.2.3_1 定点数的加减运算, 溢出判断 1. 方法一  2. 方法二  3. 方法三 , 2.2.3_2 无符号数的加减运算, 2.2.3_3 补码加减运算电路, 2.2.4_1 无符号整数的乘法运算原理, 2.2.4_2 带符号整数的乘法运算原理, 2.2.4_3 计算机实现乘法运算的三种方式, 2.2.4_4 无符号整数的除法运算原理, 2.3.1_1 浮点数的表示_IEEE 754, 2.3.1_3 浮点数的表示范围、几种特殊状态, - IEEE：规格化浮点数的表示范围- IEEE：浮点数的上溢（Overflow）- IEEE：无穷大的表示- IEEE 754：浮点数的下溢（Underflow）- IEEE 754：真值0的表示- IEEE 754：非规格化浮点数的表示负数符号取反即可- IEEE 754：非数（NaN）的表示计算机组成原理导论计算机手机组成计算机硬件能识别的数据二进制用低高电平分别表示硬件间通过主板上的印刷电路可以传递多个二进制数位每个二进制数位称为一计算机系统概述计算机系统硬件软件计算机的发展软件系统软件用来管理整个计算机系统操作系统数据库管理系统标准程序库网络软件网卡驱动等语言处理程序服务程序等应用软件按任务需要编织成的各种程序硬件第一代电子管时代第一台电子数字计算机冯诺依曼逻辑元件电子管使用机器语言编程第二代晶体管时代逻辑元件晶体管体积功耗降低出现面向过程的程序设计语言有了操作系统雏形第三代中小规模集成电路时代高级语言迅速发展有了分时操作系统第四代大规模超大规模集成电路时代开始出现微处理器微型计算机个人计算机萌芽操作系统微处理器的发展微型计算机的发展以微处理器技术为标志机器字长计算机一次整数运算所能处理的二进制位数目前都是位硬件的发展八叛徒创立仙童仙童半导体公司发明集成电路摩尔离开后创立仙童中另一成员桑德斯创立摩尔定律每个月性能翻倍计算机硬件的基本组成早期冯诺依曼机手动接线来控制计算冯诺依曼提出存储程序概念将指令以二进制代码的形式事先输入计算机的主存储器然后按其在存储器中的首地址执行程序的第一条指令以后就按该程序的规定顺序执行其他指令直至程序执行结束第一台采用冯诺依曼结构的计算机冯诺依曼计算机的特点计算机由五大部件组成指令和数据以同等地位存于存储器可按地址寻访指令和数据用二进制表示指令由操作码和地址码组成存储程序以运算器为中心输入输出设备与存储器之间的数据传送通过运算器完成现代计算机的结构现代计算机以存储器为中心运算器控制器主存即内存辅存存放在辅存只有启动运行后才会把相关代码程序数据读到主存各个硬件的工作原理主存储器的基本组成读操作写操作存储体中存的是数据指令操作码地址码运算器的基本组成均为寄存器核心部件为控制器的基本组成计算机的工作过程计算机软件软件系统软件应用软件三种级别的语言高级语言源程序通过编译程序编译器汇编语言助记符通过汇编程序汇编器机器语言二进制代码一些编程语言可以通过编译程序编译器直接将源程序翻译成机器语言还有一些编程语言通过解释程序解释器将源程序翻译成机器语言编译程序将高级语言编写的源程序全部语句一次全部翻译成机器语言程序而后再执行机器语言程序只需翻译一次解释程序将源程序的一条语句翻译成对应于机器语言的语句并立即执行紧接着再翻译下一句每次执行都要翻译注编译器汇编器解释器可统称翻译程序软件和硬件的逻辑功能等价性同一个功能既可以用硬件实现性能高成本高也可以用软件实现性能低成本也低实现一个乘法若硬件支持乘法指令则可直接用硬件若硬件只支持加法指令则可用软件编写条加法指令指令集体系结构软件和硬件之间的界面分界设计计算机系统的就是要定义一台计算机可以支持哪些指令以及每条指令的作用是什么每条指令的用法是什么计算机系统的层次结构计算机系统的工作原理计算机的性能指标存储器的性能指标总容量存储单元个数存储字长存储单元个数存储字长为位为位总容量的次方的性能指标翼龙参数主频八核十六线程主频内数字脉冲信号振荡的频率单位主频时钟频率时钟周期单位微秒纳秒每个动作至少要个时钟周期执行一条指令所需的时钟周期数不同的指令不同甚至相同的指令也可能有变化执行一条指令的耗时时钟周期执行时间整个程序的耗时时钟周期数主频指令条数主频每秒执行多少条指令主频平均每秒执行多少次浮点运算注此处为数量单位与不同系统整体的性能指标静态指标数据通路带宽数据总线一次所能并行传送信息的位数各硬件部件通过数据总线传输数据吞吐量指系统在单位时间内处理请求的数量响应时间指从用户向计算机发送一个请求到系统对该请求做出响应并获得它所需要的结果的等待时间通常包括时间与等待时间动态指标基准程序跑分软件是用来测量计算机处理速度的一种实用程序以便于被测量的计算机性能可以与运行相同程序的其它计算机性能进行比较二数据的表示和运算进位计数制位权基数每个数码位所用到的不同符号的个数进制的基数为十进制任意进制整数部分除基取余小数部分乘基取整真值和机器数了解真值符合人类习惯的数字机器数数字实际存到机器里的形式正负号需要被数字化定点数的编码表示定点数小数点的位置固定浮点数小数点的位置不固定的二次方科学计数法无符号数的表示无符号数整个机器字长的全部二进制位均为数值位没有符号位相当于数的绝对值位无符号数表示范围为的次方通常只有无符号数整数而没有无符号数小数报错有符号数的定点表示最高位为符号位正负其余为数值部分尾数注可用原码反码补码三种方式来表示定点整数和定点小数还可用移码表示定点整数原码由于真值有和两种形式实际只能表示的次方个数反码若符号位为则反码与原码相同若符号位为则数值位全部取反反码的表示范围与原码对应注反码只是原码转变为补码的一个中间状态补码正数的补码原码负数的补码反码末位要考虑进位移码补码的基础上将符号位取反注意移码只能用于表示整数移码的表示范围与补码对应移码作用真值越大移码对应的无符号数也在逐一递增因此移码表示的整数很方便对比大小从高位开始对比谁先出现谁更大技巧由补快速求补的方法符号位数值位全部取反末位各种码的作用拓展加减运算若使用原码进行加减运算正负要变为正正否则结果错误加法用加法器完成减法用减法器完成减法器成本高能否用加法代替减法用加法代替减法和在时等价数论中余数定义带余除法设属于则存在唯一决定的整数和使得根据该定义把所有整数分为类在的条件下若能找到负数的补数就可以用正数的加法来等价替代减法模的绝对值的补数补码计算机硬件默认完成的次方操作补码的作用使用补码可将减法操作转变为等价的加法中无需集成减法器执行加法操作时符号位一起参与运算移码的作用移码表示的整数很方便对比大小语言中的整数类型及类型转换零扩展符号扩展为什么要对数据进行长度扩展机器字长位决定通用寄存器位数因此通用寄存器位数是固定的的位数是固定的运算前可能需要把短数据扩展为长数据零扩展适用于无符号整数用扩展高位符号扩展计算机中带符号整数是以补码的形式存储的适用于带符号整数补码用符号位扩展高位补的位与符号位数值相同逻辑门电路数字电路基础补充基本逻辑运算与或非复合逻辑运算与非或非异或同或补充门电路的变形画法补充逻辑运算的优先级常见公式拓展芯片制程多路选择器三态门数字电路基础补充多路选择器三态门三态门和非门核心区别非门没有控制信号只有输入和输出若多路选择器有个输入则控制信号的位数向上取整有的多路选择器可能会预留一个控制信号用于拦截所有输入此时控制信号的位数向上取整加法器如何用门电路实现一位加法一位全加器加法器不足之处由于两个输入端允许并行输入因此这种加法器属于并行加法器由于进位信息是串行产生的因此从进位方式看这种加法器属于串行进位加法器综上很多教材把这种加法器称为串行进位的并行加法器并行进位的并行加法器带标志位的加法器标志位的生成算术逻辑单元算术逻辑单元的作用由控制器运算器组成控制器负责解析指令并根据指令功能发出相应的控制信号将在计组第五章详细学习运算器负责对数据进行处理如加减乘除等是一种组合逻辑电路实现了加减乘除与或非等功能因此是运算器的核心由于加减乘除等运算都要基于加法来实现因此加法器是的核心的功能的实现原理简单了解即可看懂图示定点数的移位运算逻辑移位常用于处理无符号整数逻辑左移高位移出丢弃低位补对于无符号整数每逻辑左移一位则相当于注意若逻辑左移丢弃的位则发生溢出超出无符号整数的表示范围逻辑右移低位移出丢弃高位补对于无符号整数每逻辑右移一位则相当于注意若逻辑右移丢弃的位则会丢失精度算数移位常用于处理带符号整数算数左移高位移出丢弃低位补对于带符号整数每算数左移一位则相当于注意若算数左移前后的符号位不同则发生溢出超出带符号整数的表示范围算数右移低位移出丢弃高位补符号位对于带符号整数每算数右移一位则相当于注意若算数右移丢弃的位则会丢失精度定点数的加减运算原码的加减运算补码的加减运算溢出判断方法一方法二方法三无符号数的加减运算无符号数的加法运算无符号数的减法运算无符号数加法减法的溢出判断无符号数加法的溢出判断最高位产生的进位时发生溢出否则未溢出无符号数减法的溢出判断最高位产生的进位时发生溢出否则未溢出补码加减运算电路补码加减运算电路也可用于计算无符号数加减运算无符号整数的乘法运算原理以无符号整数为例无符号整数乘法原理溢出判断溢出处理位无符号数乘法运算电路的结构带符号整数的乘法运算原理以带符号整数为例注意是进行算数右移不是逻辑右移带符号整数乘法原理溢出判断溢出处理为何是标志位不是标志位标志位一般用来记录加减运算的溢出情况乘法运算的溢出情况都是用标志位位带符号数乘法运算电路的结构补充本节介绍的补码一位乘法由提出因此这种算法也被称为布斯乘法计算机实现乘法运算的三种方式由移位器寄存器控制逻辑组成的乘法电路阵列乘法器阵列乘法器是快速乘法器中的一种很多快速乘法器都可以在个时钟内完成乘法运算用逻辑运算加减运算软件等效实现乘法结论小题简答题常考无符号整数的除法运算原理以无符号整数为例的值要先存入余数寄存器中要恢复成时再加上即可位无符号数除法运算电路的结构关于商溢出的进一步探讨概念补充在中除数为商溢出都属于除法错异常也可简译为除法异常浮点数的表示从科学计数法理解浮点数尾数规格化的好处便于在计算机内部存储标准定义的浮点数格式单精度浮点型的存储双精度浮点型的存储浮点数的表示范围几种特殊状态规格化浮点数的表示范围浮点数的上溢无穷大的表示浮点数的下溢真值的表示非规格化浮点数的表示负数符号取反即可非数的表示',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-09-21 17:47:45',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-计算机组成原理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2025-09-05T14:33:18.000Z" itemprop="datePublished">2025-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      计算机组成原理
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+        get: key => {
+          const itemStr = localStorage.getItem(key)
       
-        <h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title=" 计算机组成原理"></a><center> 计算机组成原理</h1><h2 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h2><ul>
-<li><strong>计算机&#x2F;手机组成</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnk98f"><img src="https://s21.ax1x.com/2025/06/28/pVnk98f.png" alt="pVnk98f.png"></a></li>
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://hzin-hh.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/profile photo.jpg" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Hzin-hh/KirbyGame" title="星之卡比小游戏"><img class="back-menu-item-icon" src="/img/kabi.jpg" alt="星之卡比小游戏"/><span class="back-menu-item-text">星之卡比小游戏</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">Hexo</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/img/pay.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="/img/pay.jpg"/></a><div class="post-qr-code-desc">微信</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">October 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">September 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">计算机组成原理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-09-05T14:33:18.000Z" title="Created 2025-09-05 22:33:18">2025-09-05</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-09-21T09:47:45.000Z" title="Updated 2025-09-21 17:47:45">2025-09-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为天津"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>天津</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><header><h1 id="CrawlerTitle" itemprop="name headline">计算机组成原理</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">John Doe</span><time itemprop="dateCreated datePublished" datetime="2025-09-05T14:33:18.000Z" title="Created 2025-09-05 22:33:18">2025-09-05</time><time itemprop="dateCreated datePublished" datetime="2025-09-21T09:47:45.000Z" title="Updated 2025-09-21 17:47:45">2025-09-21</time></header><h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title=" 计算机组成原理"></a><center> 计算机组成原理</h1><h2 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h2><ul>
+<li><strong>计算机&#x2F;手机组成</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnk98f"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnk98f.png" alt="pVnk98f.png"></a></li>
 <li><strong>计算机硬件能识别的数据——二进制0&#x2F;1</strong><br>用低&#x2F;高电平分别表示0&#x2F;1<br>硬件间通过主板上的印刷电路，可以传递多个二进制数位，每个二进制数位称为1bit</li>
 </ul>
 <h2 id="一、计算机系统概述"><a href="#一、计算机系统概述" class="headerlink" title="一、计算机系统概述"></a>一、计算机系统概述</h2><p>计算机系统&#x3D;硬件+软件</p>
@@ -222,7 +230,7 @@
 <li><strong>硬件的发展</strong><br>“八叛徒”创立“仙童”,仙童半导体公司发明“集成电路”,摩尔离开后创立Intel，“仙童”中另一成员桑德斯创立AMD<br>“摩尔定律”:每18个月性能翻倍</li>
 </ul>
 <h3 id="1-2-1-计算机硬件的基本组成"><a href="#1-2-1-计算机硬件的基本组成" class="headerlink" title="1.2.1 计算机硬件的基本组成"></a>1.2.1 计算机硬件的基本组成</h3><ol>
-<li><strong>早期冯诺依曼机</strong><br>ENIAC（手动接线来控制计算）<br>冯诺依曼提出<strong>存储程序</strong>概念：<strong>将指令以二进制代码的形式事先输入计算机的主存储器</strong>，然后按其在存储器中的首地址执行程序的第一条指令，以后就按该程序的规定顺序执行其他指令，直至程序执行结束<br>——&gt;第一台采用冯诺依曼结构的计算机EDVAC<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnkhQS"><img src="https://s21.ax1x.com/2025/06/28/pVnkhQS.png" alt="pVnkhQS.png"></a><ul>
+<li><strong>早期冯诺依曼机</strong><br>ENIAC（手动接线来控制计算）<br>冯诺依曼提出<strong>存储程序</strong>概念：<strong>将指令以二进制代码的形式事先输入计算机的主存储器</strong>，然后按其在存储器中的首地址执行程序的第一条指令，以后就按该程序的规定顺序执行其他指令，直至程序执行结束<br>——&gt;第一台采用冯诺依曼结构的计算机EDVAC<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnkhQS"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnkhQS.png" alt="pVnkhQS.png"></a><ul>
 <li><strong>冯诺依曼计算机的特点</strong></li>
 </ul>
 <ol>
@@ -234,25 +242,25 @@
 <li><strong>以运算器为中心</strong>（输入&#x2F;输出设备与存储器之间的数据传送通过运算器完成）</li>
 </ol>
 </li>
-<li>现代计算机的结构<br> <a target="_blank" rel="noopener" href="https://imgse.com/i/pVnE841"><img src="https://s21.ax1x.com/2025/06/28/pVnE841.png" alt="pVnE841.png"></a><br>现代计算机：<strong>以存储器为中心</strong><br>CPU&#x3D;运算器+控制器<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnEtgK"><img src="https://s21.ax1x.com/2025/06/28/pVnEtgK.png" alt="pVnEtgK.png"></a><ul>
+<li>现代计算机的结构<br> <a target="_blank" rel="noopener" href="https://imgse.com/i/pVnE841"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnE841.png" alt="pVnE841.png"></a><br>现代计算机：<strong>以存储器为中心</strong><br>CPU&#x3D;运算器+控制器<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnEtgK"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnEtgK.png" alt="pVnEtgK.png"></a><ul>
 <li>主存即内存</li>
 <li>辅存：app存放在辅存，只有app启动运行后才会把相关代码程序数据读到主存</li>
 </ul>
 </li>
 </ol>
 <hr>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnEyCt"><img src="https://s21.ax1x.com/2025/06/28/pVnEyCt.png" alt="pVnEyCt.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnEyCt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnEyCt.png" alt="pVnEyCt.png"></a></p>
 <h3 id="1-2-2-各个硬件的工作原理"><a href="#1-2-2-各个硬件的工作原理" class="headerlink" title="1.2.2 各个硬件的工作原理"></a>1.2.2 各个硬件的工作原理</h3><ol>
-<li><strong>主存储器的基本组成</strong><br>读操作：<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnEz5R"><img src="https://s21.ax1x.com/2025/06/28/pVnEz5R.png" alt="pVnEz5R.png"></a><br>写操作：<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnVpP1"><img src="https://s21.ax1x.com/2025/06/28/pVnVpP1.png" alt="pVnVpP1.png"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnVFKO"><img src="https://s21.ax1x.com/2025/06/28/pVnVFKO.png" alt="pVnVFKO.png"></a><br>存储体中存的是<strong>数据</strong>+<strong>指令（操作码+地址码）</strong></li>
-<li><strong>运算器的基本组成</strong><br><img src="https://pic1.imgdb.cn/item/68b9bddc58cb8da5c87e9853.png"><br>ACC、MQ、X均为寄存器<br>核心部件为<strong>ALU</strong></li>
-<li><strong>控制器的基本组成</strong><br><img src="https://pic1.imgdb.cn/item/68b9be0f58cb8da5c87e98a3.png"></li>
+<li><strong>主存储器的基本组成</strong><br>读操作：<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnEz5R"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnEz5R.png" alt="pVnEz5R.png"></a><br>写操作：<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnVpP1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnVpP1.png" alt="pVnVpP1.png"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnVFKO"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/28/pVnVFKO.png" alt="pVnVFKO.png"></a><br>存储体中存的是<strong>数据</strong>+<strong>指令（操作码+地址码）</strong></li>
+<li><strong>运算器的基本组成</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68b9bddc58cb8da5c87e9853.png"><br>ACC、MQ、X均为寄存器<br>核心部件为<strong>ALU</strong></li>
+<li><strong>控制器的基本组成</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68b9be0f58cb8da5c87e98a3.png"></li>
 </ol>
 <hr>
 <ul>
-<li><strong>计算机的工作过程</strong><br><img src="https://pic1.imgdb.cn/item/68bade2058cb8da5c880e482.png"><br><img src="https://pic1.imgdb.cn/item/68badf0458cb8da5c880e4e1.png"><br><img src="https://pic1.imgdb.cn/item/68badf2858cb8da5c880e4fd.png"><br><img src="https://pic1.imgdb.cn/item/68badfc958cb8da5c880e54c.png"><br><img src="https://pic1.imgdb.cn/item/68badfdc58cb8da5c880e55a.png"><br><img src="https://pic1.imgdb.cn/item/68bae00258cb8da5c880e565.png"></li>
+<li><strong>计算机的工作过程</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bade2058cb8da5c880e482.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68badf0458cb8da5c880e4e1.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68badf2858cb8da5c880e4fd.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68badfc958cb8da5c880e54c.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68badfdc58cb8da5c880e55a.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae00258cb8da5c880e565.png"></li>
 </ul>
 <hr>
-<p><img src="https://pic1.imgdb.cn/item/68bae01558cb8da5c880e56d.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae01558cb8da5c880e56d.png"></p>
 <h3 id="1-2-3-计算机软件"><a href="#1-2-3-计算机软件" class="headerlink" title="1.2.3 计算机软件"></a>1.2.3 计算机软件</h3><p>软件&#x3D;系统软件+应用软件</p>
 <ul>
 <li><strong>三种级别的语言</strong><br>高级语言（源程序）-&gt;（通过编译程序（编译器））汇编语言（助记符）-&gt;（通过汇编程序（汇编器））机器语言（二进制代码）<ul>
@@ -272,8 +280,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="1-2-4-计算机系统的层次结构"><a href="#1-2-4-计算机系统的层次结构" class="headerlink" title="1.2.4 计算机系统的层次结构"></a>1.2.4 计算机系统的层次结构</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnwfpt"><img src="https://s21.ax1x.com/2025/06/29/pVnwfpt.png" alt="pVnwfpt.png"></a></p>
-<h3 id="1-2-5-计算机系统的工作原理"><a href="#1-2-5-计算机系统的工作原理" class="headerlink" title="1.2.5 计算机系统的工作原理"></a>1.2.5 计算机系统的工作原理</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pVn0SnU"><img src="https://s21.ax1x.com/2025/06/29/pVn0SnU.png" alt="pVn0SnU.png"></a></p>
+<h3 id="1-2-4-计算机系统的层次结构"><a href="#1-2-4-计算机系统的层次结构" class="headerlink" title="1.2.4 计算机系统的层次结构"></a>1.2.4 计算机系统的层次结构</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnwfpt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnwfpt.png" alt="pVnwfpt.png"></a></p>
+<h3 id="1-2-5-计算机系统的工作原理"><a href="#1-2-5-计算机系统的工作原理" class="headerlink" title="1.2.5 计算机系统的工作原理"></a>1.2.5 计算机系统的工作原理</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pVn0SnU"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVn0SnU.png" alt="pVn0SnU.png"></a></p>
 <h3 id="1-3-计算机的性能指标"><a href="#1-3-计算机的性能指标" class="headerlink" title="1.3 计算机的性能指标"></a>1.3 计算机的性能指标</h3><ol>
 <li><p><strong>存储器的性能指标</strong><br><font color=red>总容量&#x3D;存储单元个数x存储字长 bit&#x3D;存储单元个数x存储字长&#x2F;8 Byte</font><br>Eg：MAR为32位，MDR为8位，总容量&#x3D;2的32次方*8 bit&#x3D;4GB</p>
 </li>
@@ -305,9 +313,9 @@
 </li>
 </ol>
 <h2 id="二、数据的表示和运算"><a href="#二、数据的表示和运算" class="headerlink" title="二、数据的表示和运算"></a>二、数据的表示和运算</h2><h3 id="2-1-1-进位计数制"><a href="#2-1-1-进位计数制" class="headerlink" title="2.1.1 进位计数制"></a>2.1.1 进位计数制</h3><ul>
-<li><strong>位权</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnB7Js"><img src="https://s21.ax1x.com/2025/06/29/pVnB7Js.png" alt="pVnB7Js.png"></a></li>
-<li><strong>基数</strong> ：每个数码位所用到的不同符号的个数，r进制的基数为r<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDsmT"><img src="https://s21.ax1x.com/2025/06/29/pVnDsmT.png" alt="pVnDsmT.png"></a></li>
-<li><strong>十进制-&gt;任意进制</strong><br>整数部分：除基取余<br>小数部分：乘基取整<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDy0U"><img src="https://s21.ax1x.com/2025/06/29/pVnDy0U.png" alt="pVnDy0U.png"></a></li>
+<li><strong>位权</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnB7Js"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnB7Js.png" alt="pVnB7Js.png"></a></li>
+<li><strong>基数</strong> ：每个数码位所用到的不同符号的个数，r进制的基数为r<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDsmT"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnDsmT.png" alt="pVnDsmT.png"></a></li>
+<li><strong>十进制-&gt;任意进制</strong><br>整数部分：除基取余<br>小数部分：乘基取整<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDy0U"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnDy0U.png" alt="pVnDy0U.png"></a></li>
 <li><strong>真值和机器数（了解）</strong><br>真值：符合人类习惯的数字<br>机器数：数字实际存到机器里的形式，正负号需要被“数字化”</li>
 </ul>
 <h3 id="2-1-2-2-1-3-定点数的编码表示"><a href="#2-1-2-2-1-3-定点数的编码表示" class="headerlink" title="2.1.2+2.1.3 定点数的编码表示"></a>2.1.2+2.1.3 定点数的编码表示</h3><p>定点数：小数点的位置固定（Eg：996.007）<br>浮点数：小数点的位置不固定（Eg：9.96007*10的二次方——科学计数法）</p>
@@ -316,10 +324,10 @@
 <p>通常只有无符号数整数，而没有无符号数小数（unsigned float报错）</p>
 </blockquote>
 </li>
-<li><strong>有符号数的定点表示</strong><br>最高位为符号位（0正1负），其余为数值部分（尾数）<br>注：可用<strong>原码、反码、补码</strong>三种方式来表示定点整数和定点小数。还可用<strong>移码</strong>表示定点整数<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDonK"><img src="https://s21.ax1x.com/2025/06/29/pVnDonK.png" alt="pVnDonK.png"></a><ol>
-<li><strong>原码</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnD77D"><img src="https://s21.ax1x.com/2025/06/29/pVnD77D.png" alt="pVnD77D.png"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDbAe"><img src="https://s21.ax1x.com/2025/06/29/pVnDbAe.png" alt="pVnDbAe.png"></a><br>由于真值0有+0和-0两种形式，实际只能表示2的n+1次方-1个数</li>
+<li><strong>有符号数的定点表示</strong><br>最高位为符号位（0正1负），其余为数值部分（尾数）<br>注：可用<strong>原码、反码、补码</strong>三种方式来表示定点整数和定点小数。还可用<strong>移码</strong>表示定点整数<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDonK"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnDonK.png" alt="pVnDonK.png"></a><ol>
+<li><strong>原码</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnD77D"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnD77D.png" alt="pVnD77D.png"></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pVnDbAe"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2025/06/29/pVnDbAe.png" alt="pVnDbAe.png"></a><br>由于真值0有+0和-0两种形式，实际只能表示2的n+1次方-1个数</li>
 <li><strong>反码</strong><br>若符号位为0，则反码与原码相同<br><strong>若符号位为1，则数值位全部取反</strong><br>反码的表示范围与原码对应<br>注：“反码”只是“原码”转变为“补码”的一个中间状态 </li>
-<li><strong>补码</strong><br>正数的补码&#x3D;原码<br>负数的补码&#x3D;反码末位+1（要考虑进位）<br>  <img src="https://pic1.imgdb.cn/item/68bae18158cb8da5c880e63e.png"></li>
+<li><strong>补码</strong><br>正数的补码&#x3D;原码<br>负数的补码&#x3D;反码末位+1（要考虑进位）<br>  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae18158cb8da5c880e63e.png"></li>
 <li><strong>移码</strong><br>补码的基础上将符号位取反<br><strong>注意：移码只能用于表示整数</strong><br>移码的表示范围与补码对应<br>移码作用：真值越大，移码对应的无符号数也在逐一递增，因此，移码表示的整数很方便对比大小（从高位开始对比，谁先出现1谁更大）</li>
 </ol>
 </li>
@@ -343,7 +351,7 @@
 <li>补码的作用：使用补码可将减法操作转变为等价的加法，ALU中无需集成减法器。执行加法操作时，符号位一起参与运算</li>
 <li>移码的作用：移码表示的整数很方便对比大小</li>
 </ul>
-<h3 id="2-1-4-1-C语言中的整数类型及类型转换"><a href="#2-1-4-1-C语言中的整数类型及类型转换" class="headerlink" title="2.1.4_1 C语言中的整数类型及类型转换"></a>2.1.4_1 C语言中的整数类型及类型转换</h3><p><img src="https://pic1.imgdb.cn/item/68bae0ee58cb8da5c880e5aa.png"></p>
+<h3 id="2-1-4-1-C语言中的整数类型及类型转换"><a href="#2-1-4-1-C语言中的整数类型及类型转换" class="headerlink" title="2.1.4_1 C语言中的整数类型及类型转换"></a>2.1.4_1 C语言中的整数类型及类型转换</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae0ee58cb8da5c880e5aa.png"></p>
 <h3 id="2-1-4-1-零扩展、符号扩展"><a href="#2-1-4-1-零扩展、符号扩展" class="headerlink" title="2.1.4_1 零扩展、符号扩展"></a>2.1.4_1 零扩展、符号扩展</h3><p>为什么要对数据进行长度扩展？</p>
 <ul>
 <li>机器字长（Eg：32位）决定通用寄存器位数，因此通用寄存器位数是固定的</li>
@@ -355,43 +363,43 @@
 </ol>
 <h3 id="2-2-0-1-逻辑门电路（数字电路基础补充）"><a href="#2-2-0-1-逻辑门电路（数字电路基础补充）" class="headerlink" title="2.2.0_1 逻辑门电路（数字电路基础补充）"></a>2.2.0_1 逻辑门电路（数字电路基础补充）</h3><ul>
 <li><strong>基本逻辑运算</strong><ol>
-<li><strong>与</strong><br> <img src="https://pic1.imgdb.cn/item/68bae25558cb8da5c880e6ea.png"></li>
-<li><strong>或</strong><br> <img src="https://pic1.imgdb.cn/item/68bae27e58cb8da5c880e706.png"></li>
-<li><strong>非</strong><br> <img src="https://pic1.imgdb.cn/item/68bae2a358cb8da5c880e71c.png"></li>
+<li><strong>与</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae25558cb8da5c880e6ea.png"></li>
+<li><strong>或</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae27e58cb8da5c880e706.png"></li>
+<li><strong>非</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae2a358cb8da5c880e71c.png"></li>
 </ol>
 </li>
 <li><strong>复合逻辑运算</strong><ol>
-<li><strong>与非</strong><br> <img src="https://pic1.imgdb.cn/item/68bae30658cb8da5c880e776.png"></li>
-<li><strong>或非</strong><br> <img src="https://pic1.imgdb.cn/item/68bae31a58cb8da5c880e7be.png"></li>
-<li><strong>异或</strong><br> <img src="https://pic1.imgdb.cn/item/68bae39358cb8da5c880e85a.png"></li>
-<li><strong>同或</strong><br> <img src="https://pic1.imgdb.cn/item/68bae3bc58cb8da5c880e871.png"></li>
+<li><strong>与非</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae30658cb8da5c880e776.png"></li>
+<li><strong>或非</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae31a58cb8da5c880e7be.png"></li>
+<li><strong>异或</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae39358cb8da5c880e85a.png"></li>
+<li><strong>同或</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae3bc58cb8da5c880e871.png"></li>
 </ol>
 </li>
 </ul>
-<h2 id="补充1：门电路的变形画法-补充2：逻辑运算的优先级、常见公式"><a href="#补充1：门电路的变形画法-补充2：逻辑运算的优先级、常见公式" class="headerlink" title="- 补充1：门电路的变形画法- 补充2：逻辑运算的优先级、常见公式"></a><img src="https://pic1.imgdb.cn/item/68bae3f958cb8da5c880e8f9.png"><br>- <strong>补充1：门电路的变形画法</strong><br><img src="https://pic1.imgdb.cn/item/68bae44458cb8da5c880e968.png"><br>- <strong>补充2：逻辑运算的优先级、常见公式</strong><br><img src="https://pic1.imgdb.cn/item/68bae48458cb8da5c880e9c5.png"></h2><ul>
-<li><strong>拓展：芯片制程</strong><br><img src="https://pic1.imgdb.cn/item/68bae7cd58cb8da5c880ec9d.png"><br><img src="https://pic1.imgdb.cn/item/68bae3d358cb8da5c880e89c.png"></li>
+<h2 id="补充1：门电路的变形画法-补充2：逻辑运算的优先级、常见公式"><a href="#补充1：门电路的变形画法-补充2：逻辑运算的优先级、常见公式" class="headerlink" title="- 补充1：门电路的变形画法- 补充2：逻辑运算的优先级、常见公式"></a><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae3f958cb8da5c880e8f9.png"><br>- <strong>补充1：门电路的变形画法</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae44458cb8da5c880e968.png"><br>- <strong>补充2：逻辑运算的优先级、常见公式</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae48458cb8da5c880e9c5.png"></h2><ul>
+<li><strong>拓展：芯片制程</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae7cd58cb8da5c880ec9d.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae3d358cb8da5c880e89c.png"></li>
 </ul>
 <h3 id="2-2-0-2-多路选择器、三态门（数字电路基础补充）"><a href="#2-2-0-2-多路选择器、三态门（数字电路基础补充）" class="headerlink" title="2.2.0_2 多路选择器、三态门（数字电路基础补充）"></a>2.2.0_2 多路选择器、三态门（数字电路基础补充）</h3><ul>
-<li><strong>多路选择器（MUX）</strong><br><img src="https://pic1.imgdb.cn/item/68bae84558cb8da5c880ecf7.png"><br><img src="https://pic1.imgdb.cn/item/68bae86058cb8da5c880ed3d.png"></li>
-<li><strong>三态门</strong><br><img src="https://pic1.imgdb.cn/item/68bae8b858cb8da5c880ee1b.png"><br><code>三态门和非门核心区别：“非门”没有控制信号！只有输入和输出</code><br>若多路选择器有k个输入，则控制信号的位数m&gt;&#x3D;[log2(k)]（向上取整）bit<br>有的多路选择器可能会预留一个控制信号，用于拦截所有输入，此时控制信号的位数m&gt;&#x3D;[log2(k+1)]（向上取整）bit</li>
+<li><strong>多路选择器（MUX）</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae84558cb8da5c880ecf7.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae86058cb8da5c880ed3d.png"></li>
+<li><strong>三态门</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68bae8b858cb8da5c880ee1b.png"><br><code>三态门和非门核心区别：“非门”没有控制信号！只有输入和输出</code><br>若多路选择器有k个输入，则控制信号的位数m&gt;&#x3D;[log2(k)]（向上取整）bit<br>有的多路选择器可能会预留一个控制信号，用于拦截所有输入，此时控制信号的位数m&gt;&#x3D;[log2(k+1)]（向上取整）bit</li>
 </ul>
 <h3 id="2-2-1-1-加法器"><a href="#2-2-1-1-加法器" class="headerlink" title="2.2.1_1 加法器"></a>2.2.1_1 加法器</h3><ul>
-<li><strong>如何用门电路实现一位加法</strong><br><img src="https://pic1.imgdb.cn/item/68baeca458cb8da5c880f2f0.png"></li>
-<li><strong>一位全加器</strong><br><img src="https://pic1.imgdb.cn/item/68baecc158cb8da5c880f315.png"></li>
-<li><strong>n bit加法器</strong><br><img src="https://pic1.imgdb.cn/item/68baecdf58cb8da5c880f332.png"></li>
-<li><strong>不足之处</strong><br><img src="https://pic1.imgdb.cn/item/68baeda658cb8da5c880f448.png"><br>由于两个输入端允许<font color=lightblue>并行输入 n bit</font>,因此这种加法器属于：<font color=lightblue>并行加法器</font><br>由于<font color=red>进位信息是串行产生的</font>，因此从“进位方式”看，这种加法器属于：<font color=red>串行进位加法器</font><br>综上，很多教材把这种加法器称为“<code>串行进位的并行加法器</code>”</li>
-<li><strong>并行进位的并行加法器</strong><br><img src="https://pic1.imgdb.cn/item/68baef2d58cb8da5c880f778.png"></li>
-<li><strong>带标志位的加法器</strong><br><img src="https://pic1.imgdb.cn/item/68baef6e58cb8da5c880f7f7.png"></li>
-<li><strong>标志位的生成</strong><br><img src="https://pic1.imgdb.cn/item/68baefc458cb8da5c880f8b7.png"></li>
+<li><strong>如何用门电路实现一位加法</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baeca458cb8da5c880f2f0.png"></li>
+<li><strong>一位全加器</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baecc158cb8da5c880f315.png"></li>
+<li><strong>n bit加法器</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baecdf58cb8da5c880f332.png"></li>
+<li><strong>不足之处</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baeda658cb8da5c880f448.png"><br>由于两个输入端允许<font color=lightblue>并行输入 n bit</font>,因此这种加法器属于：<font color=lightblue>并行加法器</font><br>由于<font color=red>进位信息是串行产生的</font>，因此从“进位方式”看，这种加法器属于：<font color=red>串行进位加法器</font><br>综上，很多教材把这种加法器称为“<code>串行进位的并行加法器</code>”</li>
+<li><strong>并行进位的并行加法器</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baef2d58cb8da5c880f778.png"></li>
+<li><strong>带标志位的加法器</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baef6e58cb8da5c880f7f7.png"></li>
+<li><strong>标志位的生成</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68baefc458cb8da5c880f8b7.png"></li>
 </ul>
 <h3 id="2-2-1-3-算术逻辑单元ALU"><a href="#2-2-1-3-算术逻辑单元ALU" class="headerlink" title="2.2.1_3 算术逻辑单元ALU"></a>2.2.1_3 算术逻辑单元ALU</h3><ul>
 <li><strong>算术逻辑单元（ALU）的作用</strong><br>CPU由控制器、运算器组成<br><font color=lightblue>控制器负责解析指令</font>，并根据指令功能发出相应的控制信号（将在计组第五章详细学习）<br><font color=lightblue>运算器负责对数据进行处理</font>，如：加减乘除等<br>ALU是一种组合逻辑电路，实现了加减乘除与或非等功能。因此<font color=red>ALU是运算器的核心</font><br>由于加减乘除等运算都要基于“加法”来实现，因此<font color=red>加法器是ALU的核心</font></li>
-<li><strong>ALU的功能</strong><br><img src="https://pic1.imgdb.cn/item/68be3db658cb8da5c8875d63.png"></li>
-<li><strong>ALU的实现原理</strong>（简单了解即可）<br><img src="https://pic1.imgdb.cn/item/68be3e3258cb8da5c8875da2.png"></li>
-<li><strong>看懂ALU图示</strong><br><img src="https://pic1.imgdb.cn/item/68be3ed758cb8da5c8875df3.png"></li>
+<li><strong>ALU的功能</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be3db658cb8da5c8875d63.png"></li>
+<li><strong>ALU的实现原理</strong>（简单了解即可）<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be3e3258cb8da5c8875da2.png"></li>
+<li><strong>看懂ALU图示</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be3ed758cb8da5c8875df3.png"></li>
 </ul>
 <hr>
-<p><img src="https://pic1.imgdb.cn/item/68be3eea58cb8da5c8875df8.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be3eea58cb8da5c8875df8.png"></p>
 <h3 id="2-2-2-定点数的移位运算"><a href="#2-2-2-定点数的移位运算" class="headerlink" title="2.2.2 定点数的移位运算"></a>2.2.2 定点数的移位运算</h3><ul>
 <li><strong>逻辑移位（常用于处理无符号整数）</strong><ul>
 <li>逻辑左移：<code>高位移出丢弃，低位补0</code><br> 对于<strong>无符号整数</strong>，每逻辑<strong>左</strong>移一位，则相当于×2<br> 注意：若逻辑<strong>左</strong>移丢弃的位&#x3D;1，则发生<code>溢出</code>（<strong>超出n bit无符号整数的表示范围</strong>）</li>
@@ -399,200 +407,222 @@
 </ul>
 </li>
 <li><strong>算数移位（常用于处理带符号整数）</strong><ul>
-<li>算数左移：<code>高位移出丢弃，低位补0</code><br> 对于<strong>带符号整数</strong>，每算数<strong>左</strong>移一位，则相当于×2<br> 注意：若算数<strong>左</strong>移前后的<code>符号位不同</code>，则发生<code>溢出</code>（<strong>超出n bit带符号整数的表示范围</strong>）<br> <img src="https://pic1.imgdb.cn/item/68be412358cb8da5c8875f03.png"></li>
+<li>算数左移：<code>高位移出丢弃，低位补0</code><br> 对于<strong>带符号整数</strong>，每算数<strong>左</strong>移一位，则相当于×2<br> 注意：若算数<strong>左</strong>移前后的<code>符号位不同</code>，则发生<code>溢出</code>（<strong>超出n bit带符号整数的表示范围</strong>）<br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be412358cb8da5c8875f03.png"></li>
 <li>算数右移：<code>低位移出丢弃，高位补符号位</code><br> 对于<strong>带符号整数</strong>，每算数<strong>右</strong>移一位，则相当于÷2<br> 注意：若算数<strong>右</strong>移丢弃的位&#x3D;1，则会<code>丢失精度</code></li>
 </ul>
 </li>
 </ul>
 <h3 id="2-2-3-1-定点数的加减运算"><a href="#2-2-3-1-定点数的加减运算" class="headerlink" title="2.2.3_1 定点数的加减运算"></a>2.2.3_1 定点数的加减运算</h3><ul>
-<li><strong>原码的加减运算</strong><br><img src="https://pic1.imgdb.cn/item/68be425558cb8da5c8875f3d.png"></li>
-<li><strong>补码的加减运算</strong><br><img src="https://pic1.imgdb.cn/item/68be44a758cb8da5c88769b3.png"></li>
-<li><h2 id="溢出判断-1-方法一-2-方法二-3-方法三"><a href="#溢出判断-1-方法一-2-方法二-3-方法三" class="headerlink" title="溢出判断 1. 方法一  2. 方法二  3. 方法三 "></a><strong>溢出判断</strong><br><img src="https://pic1.imgdb.cn/item/68be458158cb8da5c88769eb.png"><br> 1. <strong>方法一</strong><br> <img src="https://pic1.imgdb.cn/item/68be45ad58cb8da5c88769fe.png"><br> 2. <strong>方法二</strong><br> <img src="https://pic1.imgdb.cn/item/68be461158cb8da5c8876a21.png"><br> 3. <strong>方法三</strong><br> <img src="https://pic1.imgdb.cn/item/68be46a258cb8da5c8876a67.png"></h2> <img src="https://pic1.imgdb.cn/item/68be46b358cb8da5c8876a6f.png"></li>
+<li><strong>原码的加减运算</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be425558cb8da5c8875f3d.png"></li>
+<li><strong>补码的加减运算</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be44a758cb8da5c88769b3.png"></li>
+<li><h2 id="溢出判断-1-方法一-2-方法二-3-方法三"><a href="#溢出判断-1-方法一-2-方法二-3-方法三" class="headerlink" title="溢出判断 1. 方法一  2. 方法二  3. 方法三 "></a><strong>溢出判断</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be458158cb8da5c88769eb.png"><br> 1. <strong>方法一</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be45ad58cb8da5c88769fe.png"><br> 2. <strong>方法二</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be461158cb8da5c8876a21.png"><br> 3. <strong>方法三</strong><br> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be46a258cb8da5c8876a67.png"></h2> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be46b358cb8da5c8876a6f.png"></li>
 </ul>
 <h3 id="2-2-3-2-无符号数的加减运算"><a href="#2-2-3-2-无符号数的加减运算" class="headerlink" title="2.2.3_2 无符号数的加减运算"></a>2.2.3_2 无符号数的加减运算</h3><ul>
-<li><strong>无符号数的加法运算</strong><br><img src="https://pic1.imgdb.cn/item/68be485f58cb8da5c8876b28.png"></li>
-<li><strong>无符号数的减法运算</strong><br><img src="https://pic1.imgdb.cn/item/68be482158cb8da5c8876b15.png"></li>
+<li><strong>无符号数的加法运算</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be485f58cb8da5c8876b28.png"></li>
+<li><strong>无符号数的减法运算</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be482158cb8da5c8876b15.png"></li>
 <li><strong>无符号数加法&#x2F;减法的溢出判断</strong><br>无符号数<font color=red>加法</font>的溢出判断：<font color=red>最高位产生的进位&#x3D;1时，发生溢出，否则未溢出</font><br>无符号数<font color=blue>减法</font>的溢出判断：<font color=blue>最高位产生的进位&#x3D;0时，发生溢出，否则未溢出</font></li>
 </ul>
 <h3 id="2-2-3-3-补码加减运算电路"><a href="#2-2-3-3-补码加减运算电路" class="headerlink" title="2.2.3_3 补码加减运算电路"></a>2.2.3_3 补码加减运算电路</h3><ul>
-<li><strong>补码加减运算电路</strong><br><img src="https://pic1.imgdb.cn/item/68be4b3158cb8da5c8876cff.png"><blockquote>
+<li><strong>补码加减运算电路</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4b3158cb8da5c8876cff.png"><blockquote>
 <p>也可用于计算无符号数加减运算</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="2-2-4-1-无符号整数的乘法运算原理"><a href="#2-2-4-1-无符号整数的乘法运算原理" class="headerlink" title="2.2.4_1 无符号整数的乘法运算原理"></a>2.2.4_1 无符号整数的乘法运算原理</h3><ul>
-<li><strong>以4bit无符号整数为例</strong><br><img src="https://pic1.imgdb.cn/item/68be4cd358cb8da5c8876da8.png"><br><img src="https://pic1.imgdb.cn/item/68be4d2b58cb8da5c8876dca.png"><br><img src="https://pic1.imgdb.cn/item/68be4da458cb8da5c8876dfc.png"></li>
-<li><strong>无符号整数乘法原理：溢出判断、溢出处理</strong><br><img src="https://pic1.imgdb.cn/item/68be4dcf58cb8da5c8876e09.png"></li>
-<li><strong>32位无符号数乘法运算电路的结构</strong><br><img src="https://pic1.imgdb.cn/item/68be4e1258cb8da5c8876e1f.png"></li>
+<li><strong>以4bit无符号整数为例</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4cd358cb8da5c8876da8.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4d2b58cb8da5c8876dca.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4da458cb8da5c8876dfc.png"></li>
+<li><strong>无符号整数乘法原理：溢出判断、溢出处理</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4dcf58cb8da5c8876e09.png"></li>
+<li><strong>32位无符号数乘法运算电路的结构</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4e1258cb8da5c8876e1f.png"></li>
 </ul>
 <h3 id="2-2-4-2-带符号整数的乘法运算原理"><a href="#2-2-4-2-带符号整数的乘法运算原理" class="headerlink" title="2.2.4_2 带符号整数的乘法运算原理"></a>2.2.4_2 带符号整数的乘法运算原理</h3><ul>
-<li><strong>以4bit带符号整数为例</strong><br><img src="https://pic1.imgdb.cn/item/68be4e7e58cb8da5c8876e34.png"><br><img src="https://pic1.imgdb.cn/item/68be4efc58cb8da5c8876e56.png"><blockquote>
+<li><strong>以4bit带符号整数为例</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4e7e58cb8da5c8876e34.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4efc58cb8da5c8876e56.png"><blockquote>
 <p>注意是进行算数右移，不是逻辑右移</p>
 </blockquote>
 </li>
 </ul>
-<p><img src="https://pic1.imgdb.cn/item/68be4fb658cb8da5c8876e90.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be4fb658cb8da5c8876e90.png"></p>
 <ul>
-<li><p><strong>带符号整数乘法原理：溢出判断、溢出处理</strong><br><img src="https://pic1.imgdb.cn/item/68be507b58cb8da5c8876ee4.png"></p>
+<li><p><strong>带符号整数乘法原理：溢出判断、溢出处理</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be507b58cb8da5c8876ee4.png"></p>
 <blockquote>
 <p>为何是OF标志位不是CF标志位？<br>CF标志位一般用来记录加减运算的溢出情况，乘法运算的溢出情况都是用OF标志位</p>
 </blockquote>
 </li>
-<li><p><strong>32位带符号数乘法运算电路的结构</strong><br><img src="https://pic1.imgdb.cn/item/68be50f858cb8da5c8876f04.png"></p>
+<li><p><strong>32位带符号数乘法运算电路的结构</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be50f858cb8da5c8876f04.png"></p>
 </li>
 </ul>
 <hr>
 <p>补充：本节介绍的<code>“补码一位乘法”</code>由A.D.Booth提出，因此这种算法也被称为<code>布斯（Booth）乘法</code></p>
 <h3 id="2-2-4-3-计算机实现乘法运算的三种方式"><a href="#2-2-4-3-计算机实现乘法运算的三种方式" class="headerlink" title="2.2.4_3 计算机实现乘法运算的三种方式"></a>2.2.4_3 计算机实现乘法运算的三种方式</h3><ol>
-<li><p><strong>由ALU、移位器、寄存器、控制逻辑组成的乘法电路</strong><br><img src="https://pic1.imgdb.cn/item/68be526258cb8da5c8876f78.png"></p>
+<li><p><strong>由ALU、移位器、寄存器、控制逻辑组成的乘法电路</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be526258cb8da5c8876f78.png"></p>
 </li>
-<li><p><strong>阵列乘法器</strong><br><img src="https://pic1.imgdb.cn/item/68be528c58cb8da5c8876f83.png"></p>
+<li><p><strong>阵列乘法器</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be528c58cb8da5c8876f83.png"></p>
 <blockquote>
 <p><u>阵列乘法器</u>是<u>快速乘法器</u>中的一种。很多“<u>快速乘法器</u>”都可以在1个时钟内完成乘法运算</p>
 </blockquote>
 </li>
-<li><p><strong>用逻辑运算、加&#x2F;减运算（软件）等效实现乘法</strong><br><img src="https://pic1.imgdb.cn/item/68be535658cb8da5c8876fd6.png"></p>
+<li><p><strong>用逻辑运算、加&#x2F;减运算（软件）等效实现乘法</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be535658cb8da5c8876fd6.png"></p>
 </li>
 </ol>
 <hr>
 <ul>
-<li><strong>结论（小题、简答题常考）</strong><br><img src="https://pic1.imgdb.cn/item/68be539c58cb8da5c8876fe8.png"></li>
+<li><strong>结论（小题、简答题常考）</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be539c58cb8da5c8876fe8.png"></li>
 </ul>
 <h3 id="2-2-4-4-无符号整数的除法运算原理"><a href="#2-2-4-4-无符号整数的除法运算原理" class="headerlink" title="2.2.4_4 无符号整数的除法运算原理"></a>2.2.4_4 无符号整数的除法运算原理</h3><ul>
-<li><strong>以4bit无符号整数为例</strong><br><img src="https://pic1.imgdb.cn/item/68be543458cb8da5c8877014.png"><br><img src="https://pic1.imgdb.cn/item/68be551258cb8da5c8877049.png"><br>R-Y的值要先存入余数寄存器R中，要恢复成R时再加上Y即可<br><img src="https://pic1.imgdb.cn/item/68be558f58cb8da5c8877099.png"><br><img src="https://pic1.imgdb.cn/item/68be55a958cb8da5c88770a4.png"></li>
-<li><strong>32位无符号数除法运算电路的结构</strong><br><img src="https://pic1.imgdb.cn/item/68be55c658cb8da5c88770a8.png"></li>
-<li><strong>关于“商溢出”的进一步探讨</strong><br><img src="https://pic1.imgdb.cn/item/68be561058cb8da5c88770b7.png"></li>
+<li><strong>以4bit无符号整数为例</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be543458cb8da5c8877014.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be551258cb8da5c8877049.png"><br>R-Y的值要先存入余数寄存器R中，要恢复成R时再加上Y即可<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be558f58cb8da5c8877099.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be55a958cb8da5c88770a4.png"></li>
+<li><strong>32位无符号数除法运算电路的结构</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be55c658cb8da5c88770a8.png"></li>
+<li><strong>关于“商溢出”的进一步探讨</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be561058cb8da5c88770b7.png"></li>
 </ul>
 <hr>
 <p>概念补充：在x86中，<u>除数为0</u>，<u>商溢出</u>都属于<code>“除法错异常”</code>（Divide Error Exception），也可简译为<code>“除法异常”</code></p>
-<h3 id="2-3-1-1-浮点数的表示-IEEE-754"><a href="#2-3-1-1-浮点数的表示-IEEE-754" class="headerlink" title="2.3.1_1 浮点数的表示_IEEE 754"></a>2.3.1_1 浮点数的表示_IEEE 754</h3><p><img src="https://pic1.imgdb.cn/item/68be6d4e58cb8da5c88785e0.png"></p>
+<h3 id="2-3-1-1-浮点数的表示-IEEE-754"><a href="#2-3-1-1-浮点数的表示-IEEE-754" class="headerlink" title="2.3.1_1 浮点数的表示_IEEE 754"></a>2.3.1_1 浮点数的表示_IEEE 754</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be6d4e58cb8da5c88785e0.png"></p>
 <ul>
-<li><strong>从科学计数法理解浮点数</strong><br><img src="https://pic1.imgdb.cn/item/68be6e5458cb8da5c8878dbf.png"><br>尾数“规格化”的好处：便于在计算机内部存储</li>
-<li><strong>IEEE 754标准定义的浮点数格式</strong><br><img src="https://pic1.imgdb.cn/item/68be6f6f58cb8da5c8878efc.png"></li>
-<li><strong>float单精度浮点型的存储</strong><br><img src="https://pic1.imgdb.cn/item/68be709858cb8da5c8878fb9.png"></li>
-<li><strong>double双精度浮点型的存储</strong><br><img src="https://pic1.imgdb.cn/item/68be70fc58cb8da5c8878fde.png"></li>
+<li><strong>从科学计数法理解浮点数</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be6e5458cb8da5c8878dbf.png"><br>尾数“规格化”的好处：便于在计算机内部存储</li>
+<li><strong>IEEE 754标准定义的浮点数格式</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be6f6f58cb8da5c8878efc.png"></li>
+<li><strong>float单精度浮点型的存储</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be709858cb8da5c8878fb9.png"></li>
+<li><strong>double双精度浮点型的存储</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be70fc58cb8da5c8878fde.png"></li>
 </ul>
-<h3 id="2-3-1-3-浮点数的表示范围、几种特殊状态"><a href="#2-3-1-3-浮点数的表示范围、几种特殊状态" class="headerlink" title="2.3.1_3 浮点数的表示范围、几种特殊状态"></a>2.3.1_3 浮点数的表示范围、几种特殊状态</h3><h2 id="IEEE：规格化浮点数的表示范围-IEEE：浮点数的上溢（Overflow）-IEEE：无穷大的表示-IEEE-754：浮点数的下溢（Underflow）-IEEE-754：真值0的表示-IEEE-754：非规格化浮点数的表示负数符号取反即可-IEEE-754：非数（NaN）的表示"><a href="#IEEE：规格化浮点数的表示范围-IEEE：浮点数的上溢（Overflow）-IEEE：无穷大的表示-IEEE-754：浮点数的下溢（Underflow）-IEEE-754：真值0的表示-IEEE-754：非规格化浮点数的表示负数符号取反即可-IEEE-754：非数（NaN）的表示" class="headerlink" title="- IEEE：规格化浮点数的表示范围- IEEE：浮点数的上溢（Overflow）- IEEE：无穷大的表示- IEEE 754：浮点数的下溢（Underflow）- IEEE 754：真值0的表示- IEEE 754：非规格化浮点数的表示负数符号取反即可- IEEE 754：非数（NaN）的表示"></a><img src="https://pic1.imgdb.cn/item/68be717c58cb8da5c887905c.png"><br>- <strong>IEEE：<u>规格化浮点数</u>的表示范围</strong><br><img src="https://pic1.imgdb.cn/item/68be722f58cb8da5c8879186.png"><br><img src="https://pic1.imgdb.cn/item/68be72c158cb8da5c887929e.png"><br>- <strong>IEEE：浮点数的上溢（Overflow）</strong><br><img src="https://pic1.imgdb.cn/item/68be73d858cb8da5c8879423.png"><br>- <strong>IEEE：无穷大的表示</strong><br><img src="https://pic1.imgdb.cn/item/68be73b158cb8da5c88793ed.png"><br>- <strong>IEEE 754：浮点数的下溢（Underflow）</strong><br><img src="https://pic1.imgdb.cn/item/68be744858cb8da5c8879494.png"><br>- <strong>IEEE 754：真值0的表示</strong><br><img src="https://pic1.imgdb.cn/item/68be759c58cb8da5c8879af7.png"><br>- <strong>IEEE 754：非规格化浮点数的表示</strong><br><img src="https://pic1.imgdb.cn/item/68be761358cb8da5c8879e5f.png"><br>负数符号取反即可<br>- <strong>IEEE 754：非数（NaN）的表示</strong><br><img src="https://pic1.imgdb.cn/item/68be76d158cb8da5c887a3a8.png"></h2><p><img src="https://pic1.imgdb.cn/item/68be76eb58cb8da5c887a4a8.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" data-id="cmh7rsi3000026kuvco1a6njq" data-title="计算机组成原理" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+<h3 id="2-3-1-3-浮点数的表示范围、几种特殊状态"><a href="#2-3-1-3-浮点数的表示范围、几种特殊状态" class="headerlink" title="2.3.1_3 浮点数的表示范围、几种特殊状态"></a>2.3.1_3 浮点数的表示范围、几种特殊状态</h3><h2 id="IEEE：规格化浮点数的表示范围-IEEE：浮点数的上溢（Overflow）-IEEE：无穷大的表示-IEEE-754：浮点数的下溢（Underflow）-IEEE-754：真值0的表示-IEEE-754：非规格化浮点数的表示负数符号取反即可-IEEE-754：非数（NaN）的表示"><a href="#IEEE：规格化浮点数的表示范围-IEEE：浮点数的上溢（Overflow）-IEEE：无穷大的表示-IEEE-754：浮点数的下溢（Underflow）-IEEE-754：真值0的表示-IEEE-754：非规格化浮点数的表示负数符号取反即可-IEEE-754：非数（NaN）的表示" class="headerlink" title="- IEEE：规格化浮点数的表示范围- IEEE：浮点数的上溢（Overflow）- IEEE：无穷大的表示- IEEE 754：浮点数的下溢（Underflow）- IEEE 754：真值0的表示- IEEE 754：非规格化浮点数的表示负数符号取反即可- IEEE 754：非数（NaN）的表示"></a><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be717c58cb8da5c887905c.png"><br>- <strong>IEEE：<u>规格化浮点数</u>的表示范围</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be722f58cb8da5c8879186.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be72c158cb8da5c887929e.png"><br>- <strong>IEEE：浮点数的上溢（Overflow）</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be73d858cb8da5c8879423.png"><br>- <strong>IEEE：无穷大的表示</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be73b158cb8da5c88793ed.png"><br>- <strong>IEEE 754：浮点数的下溢（Underflow）</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be744858cb8da5c8879494.png"><br>- <strong>IEEE 754：真值0的表示</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be759c58cb8da5c8879af7.png"><br>- <strong>IEEE 754：非规格化浮点数的表示</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be761358cb8da5c8879e5f.png"><br>负数符号取反即可<br>- <strong>IEEE 754：非数（NaN）的表示</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be76d158cb8da5c887a3a8.png"></h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic1.imgdb.cn/item/68be76eb58cb8da5c887a4a8.png"></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/profile%20photo.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/profile%20photo.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">John Doe</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/')">计算机组成原理</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/img/pay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/pay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=计算机组成原理&amp;url=http://example.com/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="/img/profile%20photo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">数据结构</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/profile%20photo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">John Doe</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Hzin-hh" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/27590708?spm_id_from=333.1007.0.0" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 计算机组成原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">导论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">一、计算机系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 计算机的发展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.1 计算机硬件的基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E5%90%84%E4%B8%AA%E7%A1%AC%E4%BB%B6%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.2 各个硬件的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.4.</span> <span class="toc-text">1.2.3 计算机软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.5.</span> <span class="toc-text">1.2.4 计算机系统的层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-5-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.6.</span> <span class="toc-text">1.2.5 计算机系统的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.2.7.</span> <span class="toc-text">1.3 计算机的性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">二、数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1.1 进位计数制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-2-1-3-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.1.2+2.1.3 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-1-C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.3.</span> <span class="toc-text">2.1.4_1 C语言中的整数类型及类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-1-%E9%9B%B6%E6%89%A9%E5%B1%95%E3%80%81%E7%AC%A6%E5%8F%B7%E6%89%A9%E5%B1%95"><span class="toc-number">1.3.4.</span> <span class="toc-text">2.1.4_1 零扩展、符号扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-0-1-%E9%80%BB%E8%BE%91%E9%97%A8%E7%94%B5%E8%B7%AF%EF%BC%88%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-number">1.3.5.</span> <span class="toc-text">2.2.0_1 逻辑门电路（数字电路基础补充）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%851%EF%BC%9A%E9%97%A8%E7%94%B5%E8%B7%AF%E7%9A%84%E5%8F%98%E5%BD%A2%E7%94%BB%E6%B3%95-%E8%A1%A5%E5%85%852%EF%BC%9A%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E3%80%81%E5%B8%B8%E8%A7%81%E5%85%AC%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">- 补充1：门电路的变形画法- 补充2：逻辑运算的优先级、常见公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-0-2-%E5%A4%9A%E8%B7%AF%E9%80%89%E6%8B%A9%E5%99%A8%E3%80%81%E4%B8%89%E6%80%81%E9%97%A8%EF%BC%88%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-number">1.4.1.</span> <span class="toc-text">2.2.0_2 多路选择器、三态门（数字电路基础补充）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-1-%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.2.1_1 加法器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-3-%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83ALU"><span class="toc-number">1.4.3.</span> <span class="toc-text">2.2.1_3 算术逻辑单元ALU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-number">1.4.4.</span> <span class="toc-text">2.2.2 定点数的移位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-1-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">1.4.5.</span> <span class="toc-text">2.2.3_1 定点数的加减运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA%E5%88%A4%E6%96%AD-1-%E6%96%B9%E6%B3%95%E4%B8%80-2-%E6%96%B9%E6%B3%95%E4%BA%8C-3-%E6%96%B9%E6%B3%95%E4%B8%89"><span class="toc-number">1.5.</span> <span class="toc-text">溢出判断 1. 方法一  2. 方法二  3. 方法三 </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-2-%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">1.5.1.</span> <span class="toc-text">2.2.3_2 无符号数的加减运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-3-%E8%A1%A5%E7%A0%81%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.2.3_3 补码加减运算电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-1-%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.3.</span> <span class="toc-text">2.2.4_1 无符号整数的乘法运算原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-2-%E5%B8%A6%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.4.</span> <span class="toc-text">2.2.4_2 带符号整数的乘法运算原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%9E%E7%8E%B0%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.5.</span> <span class="toc-text">2.2.4_3 计算机实现乘法运算的三种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-4-%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E9%99%A4%E6%B3%95%E8%BF%90%E7%AE%97%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.6.</span> <span class="toc-text">2.2.4_4 无符号整数的除法运算原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-1-%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA-IEEE-754"><span class="toc-number">1.5.7.</span> <span class="toc-text">2.3.1_1 浮点数的表示_IEEE 754</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-3-%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4%E3%80%81%E5%87%A0%E7%A7%8D%E7%89%B9%E6%AE%8A%E7%8A%B6%E6%80%81"><span class="toc-number">1.5.8.</span> <span class="toc-text">2.3.1_3 浮点数的表示范围、几种特殊状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IEEE%EF%BC%9A%E8%A7%84%E6%A0%BC%E5%8C%96%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4-IEEE%EF%BC%9A%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%B8%8A%E6%BA%A2%EF%BC%88Overflow%EF%BC%89-IEEE%EF%BC%9A%E6%97%A0%E7%A9%B7%E5%A4%A7%E7%9A%84%E8%A1%A8%E7%A4%BA-IEEE-754%EF%BC%9A%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%B8%8B%E6%BA%A2%EF%BC%88Underflow%EF%BC%89-IEEE-754%EF%BC%9A%E7%9C%9F%E5%80%BC0%E7%9A%84%E8%A1%A8%E7%A4%BA-IEEE-754%EF%BC%9A%E9%9D%9E%E8%A7%84%E6%A0%BC%E5%8C%96%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%B4%9F%E6%95%B0%E7%AC%A6%E5%8F%B7%E5%8F%96%E5%8F%8D%E5%8D%B3%E5%8F%AF-IEEE-754%EF%BC%9A%E9%9D%9E%E6%95%B0%EF%BC%88NaN%EF%BC%89%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.6.</span> <span class="toc-text">- IEEE：规格化浮点数的表示范围- IEEE：浮点数的上溢（Overflow）- IEEE：无穷大的表示- IEEE 754：浮点数的下溢（Underflow）- IEEE 754：真值0的表示- IEEE 754：非规格化浮点数的表示负数符号取反即可- IEEE 754：非数（NaN）的表示</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/26/java/" title="Java">Java</a><time datetime="2025-10-26T13:52:39.394Z" title="Created 2025-10-26 21:52:39">2025-10-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/13/web%E5%BC%80%E5%8F%91/" title="web开发">web开发</a><time datetime="2025-10-13T13:56:04.000Z" title="Created 2025-10-13 21:56:04">2025-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a><time datetime="2025-09-16T14:25:25.000Z" title="Created 2025-09-16 22:25:25">2025-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理">计算机组成原理</a><time datetime="2025-09-05T14:33:18.000Z" title="Created 2025-09-05 22:33:18">2025-09-05</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2025 By <a class="footer-bar-link" href="/" title="John Doe" target="_blank">John Doe</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://hzin-hh.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/profile photo.jpg" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/Hzin-hh/KirbyGame" title="星之卡比小游戏"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/kabi.jpg" alt="星之卡比小游戏"/><span class="back-menu-item-text">星之卡比小游戏</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/playlist?id=14241068802&amp;uct2=U2FsdGVkX1/mic3F7zpcfCNjUSnP8Uw2s5iGH2swfoI=&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
         
-          数据结构
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
         
-      </div>
-    </a>
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.15",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 John Doe 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
   
-  
-</nav>
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-  
-</article>
+  typeof typed === 'object' && typed.destroy()
 
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-  
-    
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li></ul>
-    </div>
-  </div>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
+  typeof panguInit === 'function' && panguInit()
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/10/26/java/">Java</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/13/web%E5%BC%80%E5%8F%91/">web开发</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
 
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
 
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
