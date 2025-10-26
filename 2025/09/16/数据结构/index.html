@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数据结构 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数据结构7.3.1 二叉排序树（BST） 二叉排序树的查找 12345678&#x2F;&#x2F;在二叉排序树中查找值位key的结点BSTNode *BST_Search(BSTree T,int key)&#123;    while(T!&#x3D;nullptr&amp;&amp;key!&#x3D;T-&gt;key)&#123;&#x2F;&#x2F;若树空或等于根结点值，则结束循环        if(key&lt;T-&gt;key) T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构">
+<meta property="og:url" content="http://example.com/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据结构7.3.1 二叉排序树（BST） 二叉排序树的查找 12345678&#x2F;&#x2F;在二叉排序树中查找值位key的结点BSTNode *BST_Search(BSTree T,int key)&#123;    while(T!&#x3D;nullptr&amp;&amp;key!&#x3D;T-&gt;key)&#123;&#x2F;&#x2F;若树空或等于根结点值，则结束循环        if(key&lt;T-&gt;key) T">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfd8cb58cb8da5c88fbf0a.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfd91958cb8da5c88fc12d.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfd96858cb8da5c88fc307.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfdbdb58cb8da5c88fdfd9.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfdc7c58cb8da5c88fe996.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfdd2c58cb8da5c88ffa40.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfdda258cb8da5c890043c.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfde1558cb8da5c8900dd5.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfde5f58cb8da5c8901628.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfde8858cb8da5c8901adb.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfded058cb8da5c89021d9.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe00658cb8da5c89040e6.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe01358cb8da5c89041fe.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe09058cb8da5c89047bc.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe09e58cb8da5c890483c.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe1eb58cb8da5c8905380.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe2c858cb8da5c8905ab4.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe76a58cb8da5c89093db.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe8b658cb8da5c890aa65.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe8cd58cb8da5c890ad56.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe96058cb8da5c890b956.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe97758cb8da5c890bbcd.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe9d758cb8da5c890c191.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe9e458cb8da5c890c23b.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfe9ef58cb8da5c890c2ea.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bfea2558cb8da5c890c60a.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bff6af58cb8da5c89142a7.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd1e58cb8da5c8915e95.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd3858cb8da5c8915ebc.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd4758cb8da5c8915ed9.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd5c58cb8da5c8915efb.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd6d58cb8da5c8915f12.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd7958cb8da5c8915f29.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd8658cb8da5c8915f3e.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd8e58cb8da5c8915f49.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffd9658cb8da5c8915f59.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffde758cb8da5c8915fdb.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe0758cb8da5c891600d.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe0f58cb8da5c891601d.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe1858cb8da5c891602f.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe3858cb8da5c8916066.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe4658cb8da5c891607e.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe5e58cb8da5c89160a0.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe6a58cb8da5c89160ac.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe7858cb8da5c89160c5.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe8158cb8da5c89160d6.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffe8d58cb8da5c89160e7.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68bffea858cb8da5c8916109.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1646d58cb8da5c89898c7.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c168e058cb8da5c8989d56.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1696958cb8da5c8989d98.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c16ac458cb8da5c8989f38.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c16b1a58cb8da5c8989fcb.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c16d8158cb8da5c898a1ad.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c16e3d58cb8da5c898a211.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c16f5258cb8da5c898a2af.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1715658cb8da5c898a3bc.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1716958cb8da5c898a3c5.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c171fc58cb8da5c898a483.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1720a58cb8da5c898a48e.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1726b58cb8da5c898a4bf.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1729258cb8da5c898a4de.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c172d558cb8da5c898a503.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c172e358cb8da5c898a50a.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1735158cb8da5c898a553.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c174f858cb8da5c898a790.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1750458cb8da5c898a7a1.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1756558cb8da5c898a846.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1757958cb8da5c898a875.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c175b858cb8da5c898a913.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c175e958cb8da5c898a989.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1760b58cb8da5c898a9d3.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1763b58cb8da5c898aa1f.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1767758cb8da5c898aab0.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1788258cb8da5c898af5f.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c17a3058cb8da5c898b217.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c17c8758cb8da5c898b482.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c180ad58cb8da5c898b92c.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1812858cb8da5c898b98c.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c1813658cb8da5c898b995.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c905d0c5157e1a880a7e1e.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c905ebc5157e1a880a7ec1.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c906b8c5157e1a880a83e9.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c906b8c5157e1a880a83e9.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c916c0c5157e1a880b0d4c.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9189ec5157e1a880b1571.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c918f95ac5d.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c91c24a3a1d.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c91dccbbefd.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c91e3f1abf6.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c91ef622b65.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c91f34eebd4.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c92031768c2.png">
+<meta property="og:image" content="https://youke1.picui.cn/s1/2025/09/16/68c91ff9a22a0.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9222ac5157e1a880b6ad5.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92285c5157e1a880b7200.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92383c5157e1a880b8195.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92450c5157e1a880b8b52.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c925e9c5157e1a880b9759.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92657c5157e1a880b9a15.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92741c5157e1a880ba35d.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92833c5157e1a880baef7.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c92ac1c5157e1a880bc7fd.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c93a1ec5157e1a880ca523.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9444bc5157e1a880cfeb7.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c94466c5157e1a880d0059.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c947b5c5157e1a880d2827.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9476fc5157e1a880d280f.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c94aacc5157e1a880d33e1.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c94ca1c5157e1a880d42c4.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c956ffc5157e1a880da787.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c959a5c5157e1a880dc082.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c95bf6c5157e1a880dd936.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c95ebfc5157e1a880dedb2.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9670ec5157e1a880e05cb.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9682ac5157e1a880e0df0.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68c9683dc5157e1a880e0e36.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca1006c5157e1a880f3b43.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca1114c5157e1a880f499f.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca11bbc5157e1a880f5156.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca168bc5157e1a880f984b.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca171dc5157e1a880f9e18.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca1ba6c5157e1a880fbd7b.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca1cadc5157e1a880fc2dc.png">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/68ca1cbbc5157e1a880fc2ff.png">
+<meta property="article:published_time" content="2025-09-16T14:25:25.000Z">
+<meta property="article:modified_time" content="2025-09-21T09:46:19.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.imgdb.cn/item/68bfd8cb58cb8da5c88fbf0a.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数据结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
+  <time class="dt-published" datetime="2025-09-16T14:25:25.000Z" itemprop="datePublished">2025-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数据结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="数据结构"><a href="#数据结构" class="headerlink" title=" 数据结构"></a><center> 数据结构</h2><h3 id="7-3-1-二叉排序树（BST）"><a href="#7-3-1-二叉排序树（BST）" class="headerlink" title="7.3.1 二叉排序树（BST）"></a>7.3.1 二叉排序树（BST）</h3><ul>
+<li><p><strong>二叉排序树的查找</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//在二叉排序树中查找值位key的结点</span><br><span class="line">BSTNode *BST_Search(BSTree T,int key)&#123;</span><br><span class="line">    while(T!=nullptr&amp;&amp;key!=T-&gt;key)&#123;//若树空或等于根结点值，则结束循环</span><br><span class="line">        if(key&lt;T-&gt;key) T=T-&gt;child;//小于，则在左子树上查找</span><br><span class="line">        else T=T-&gt;rchild;//大于，则在右子树上查找</span><br><span class="line">    &#125;</span><br><span class="line">    return T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最坏空间复杂度O(1)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//在二叉排序树中查找值为key的结点（递归实现）</span><br><span class="line">BSTNode *BSTSearch(BSTree T,int key)&#123;</span><br><span class="line">    if(T==nullptr)</span><br><span class="line">        return nullptr;//查找失败</span><br><span class="line">    if(key==T-&gt;key)</span><br><span class="line">        return T;//查找成功</span><br><span class="line">    else if(key&lt;T-&gt;key)</span><br><span class="line">        return BSTSearch(T-&gt;lchild,key);//在左子树中找</span><br><span class="line">    else</span><br><span class="line">        return BSTSearch(T-&gt;rchild,key);//在右子树中找</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最坏空间复杂度O(h)</p>
+</li>
+<li><p><strong>二叉排序树的插入</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//在二叉排序树插入关键字为k的新结点（递归实现）</span><br><span class="line">int BST_Insert(BStree &amp;T,int k)&#123;</span><br><span class="line">    if(T==nullptr)&#123;//原树为空，新插入的结点为根结点</span><br><span class="line">        T=(BSTree)malloc(sizeof(BSTNode));</span><br><span class="line">        T-&gt;key=k;</span><br><span class="line">        T-&gt;lchild=T-&gt;rchild=nullptr;</span><br><span class="line">        return 1;//返回1，插入成功</span><br><span class="line">    &#125;</span><br><span class="line">    else if(k==T-&gt;key)//树中存在相同关键字的结点，插入失败</span><br><span class="line">        return 0;</span><br><span class="line">    else if(k&lt;T-&gt;key)//插入到T的左子树</span><br><span class="line">        return BST_Insert(T-&gt;lchild,,k);</span><br><span class="line">    else//插入到T的右子树</span><br><span class="line">        return BST_Insert(T-&gt;rchild,k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意函数参数是引用类型<br>最坏空间复杂度O(h)</p>
+</li>
+<li><p><strong>二叉排序树的构造</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//按照str[]中的关键字序列建立二叉排序树</span><br><span class="line">void Creat_BST(BSTree &amp;T,int str[],int n)&#123;</span><br><span class="line">    T=nullptr;//初始时T为空树</span><br><span class="line">    int i=0;</span><br><span class="line">    while(i&lt;n)&#123;依次将每个关键字插入到二叉排序树中</span><br><span class="line">        BST_Insert(T,str[i]);</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>二叉排序树的删除</strong><br>先搜索找到目标结点：</p>
+</li>
+</ul>
+<ol>
+<li>若被删除结点z是叶结点，则直接删除，不会破坏二叉排序树的性质</li>
+<li>若结点z只有一棵左子树或右子树，则让z的子树成为z父结点的子树，替代z的位置</li>
+<li>若结点z有左、右两棵子树，则令z的直接后继（或直接前驱）替代z，然后从二叉排序树中删去这个直接后继（或直接前驱），这样就转换成了第一或第二种情况<br>原理：<br><code>左子树结点值&lt;根结点值&lt;右子树结点值</code><br><code>进行中序遍历，可以得到一个递增的有序序列</code><br>z的<strong>后继</strong>：z的右子树中最左下结点（该结点一定没有左子树）<br>z的<strong>前驱</strong>：z的左子树中最右下结点（该结点一定没有右子树）</li>
+</ol>
+<h3 id="7-3-2-1-平衡二叉树（AVL）"><a href="#7-3-2-1-平衡二叉树（AVL）" class="headerlink" title="7.3.2_1 平衡二叉树（AVL）"></a>7.3.2_1 平衡二叉树（AVL）</h3><p><strong>结点的平衡因子</strong>&#x3D;左子树高-右子树高（只可能是-1、0或1）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//平衡二叉树结点</span><br><span class="line">typedef struct AVLNode&#123;</span><br><span class="line">    int key;//数据域</span><br><span class="line">    int balance;//平衡因子</span><br><span class="line">    struct AVLNode *lchild,*rchild;</span><br><span class="line">&#125;AVLNode,*AVLTree;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>平衡二叉树的插入</strong><br><img src="https://pic1.imgdb.cn/item/68bfd8cb58cb8da5c88fbf0a.png"><br>每次调整的对象都是“<strong>最小不平衡子树</strong>”<br><img src="https://pic1.imgdb.cn/item/68bfd91958cb8da5c88fc12d.png"><br>在插入操作中，只要将最小不平衡子树调整平衡，则其他祖先结点都会恢复平衡</li>
+<li><strong>调整最小不平衡子树</strong><br><img src="https://pic1.imgdb.cn/item/68bfd96858cb8da5c88fc307.png"><ul>
+<li><strong>LL</strong><br>  <img src="https://pic1.imgdb.cn/item/68bfdbdb58cb8da5c88fdfd9.png"></li>
+<li><strong>RR</strong><br>  <img src="https://pic1.imgdb.cn/item/68bfdc7c58cb8da5c88fe996.png"></li>
+<li><strong>代码思路</strong><br>  <img src="https://pic1.imgdb.cn/item/68bfdd2c58cb8da5c88ffa40.png"></li>
+<li><strong>LR</strong><br>  <img src="https://pic1.imgdb.cn/item/68bfdda258cb8da5c890043c.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfde1558cb8da5c8900dd5.png"></li>
+<li><strong>RL</strong><br>  <img src="https://pic1.imgdb.cn/item/68bfde5f58cb8da5c8901628.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfde8858cb8da5c8901adb.png"></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://pic1.imgdb.cn/item/68bfded058cb8da5c89021d9.png"><br>恢复原因：插入操作导致“最小不平衡子树”高度+1，经过调整后高度恢复</p>
+<ul>
+<li><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a><strong>练习</strong><br><img src="https://pic1.imgdb.cn/item/68bfe00658cb8da5c89040e6.png"><br><img src="https://pic1.imgdb.cn/item/68bfe01358cb8da5c89041fe.png"></h2><p>  <img src="https://pic1.imgdb.cn/item/68bfe09058cb8da5c89047bc.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfe09e58cb8da5c890483c.png"></p>
+</li>
+<li><p><strong>查找效率分析</strong><br><img src="https://pic1.imgdb.cn/item/68bfe1eb58cb8da5c8905380.png"><br>1为根结点，令左子树结点数为$n_{h-1}$，右子树结点数为$n_{h-2}$，可得公式</p>
+</li>
+</ul>
+<hr>
+<p><img src="https://pic1.imgdb.cn/item/68bfe2c858cb8da5c8905ab4.png"></p>
+<h3 id="7-3-2-2-平衡二叉树的删除"><a href="#7-3-2-2-平衡二叉树的删除" class="headerlink" title="7.3.2_2_平衡二叉树的删除"></a>7.3.2_2_平衡二叉树的删除</h3><p><img src="https://pic1.imgdb.cn/item/68bfe76a58cb8da5c89093db.png"></p>
+<ul>
+<li><h2 id="例子"><a href="#例子" class="headerlink" title="例子    "></a><strong>例子</strong><br>  <img src="https://pic1.imgdb.cn/item/68bfe8b658cb8da5c890aa65.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfe8cd58cb8da5c890ad56.png"></h2><h2 id=""><a href="#" class="headerlink" title="    "></a>  <img src="https://pic1.imgdb.cn/item/68bfe96058cb8da5c890b956.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfe97758cb8da5c890bbcd.png"></h2>  <img src="https://pic1.imgdb.cn/item/68bfe9d758cb8da5c890c191.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfe9e458cb8da5c890c23b.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfe9ef58cb8da5c890c2ea.png"><br>  <img src="https://pic1.imgdb.cn/item/68bfea2558cb8da5c890c60a.png"></li>
+</ul>
+<h3 id="7-3-3-1-红黑树的定义和性质"><a href="#7-3-3-1-红黑树的定义和性质" class="headerlink" title="7.3.3_1_红黑树的定义和性质"></a>7.3.3_1_红黑树的定义和性质</h3><p><strong>平衡二叉树AVL</strong>：插入&#x2F;删除很容易破坏“平衡”特性，需要频繁调整树的形态。如：插入操作导致不平衡，则需要先<strong>计算平衡因子，找到最小不平衡子树（时间开销大）</strong>，再进行LL&#x2F;RR&#x2F;LR&#x2F;RL调整<br><strong>红黑树RBT</strong>：插入&#x2F;删除很多时候不会破坏“红黑”特性，无需频繁调整树的形态。即便需要调整，一般都可以<font color=red>在常数级时间内完成</font><br><code>平衡二叉树</code>：适用于以查为主、很少插入&#x2F;删除的场景<br><code>红黑树</code>：适用于频繁插入、删除的场景，实用性更强</p>
+<ul>
+<li><strong>红黑树的定义</strong><br>红黑树是二叉排序树-&gt;左&lt;根&lt;右<br>与普通BST相比要求：<ol>
+<li>每个结点或是红色的，或是黑色的</li>
+<li>根结点是黑色的</li>
+<li>叶结点（外部结点、NULL结点、失败结点）均是黑色的</li>
+<li>不存在两个相邻的红结点（即红结点的父结点和孩子结点均是黑色）</li>
+<li>对每个结点，从该结点到任一叶结点的简单路径上，所含黑结点的数目相同<blockquote>
+<p>左根右，根叶黑，不红红，黑路同</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct RBnode&#123;</span><br><span class="line">    int key;//关键字的值</span><br><span class="line">    RBnode* parent;//父结点指针</span><br><span class="line">    RBnode* lChild;//左孩子指针</span><br><span class="line">    RBnode* rChild;//右孩子指针</span><br><span class="line">    int color;//结点颜色，如：可用0/1表示黑/红，也可使用枚举型enum表示颜色</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><strong>补充概念：结点的黑高</strong><br><strong>结点的黑高bh</strong>——从某结点出发（不含该结点）到达任一空叶结点的路径上黑结点总数</li>
+<li><strong>红黑树的性质</strong><br>性质1：从根结点到叶结点的最长路径不大于最短路径的2倍（由4、5得）<br>性质2：有n个内部结点的红黑树高度h&lt;&#x3D;2 $log_2(n+1)$<br>性质2可证明红黑树**查找操作时间复杂度&#x3D;O($log_2(n)$)</li>
+<li><strong>红黑树的查找</strong><br>与BST、AVL相同，从根出发，左小右大，若查找到一个空叶结点，则查找失败</li>
+</ul>
+<h3 id="7-3-3-2-红黑树的插入"><a href="#7-3-3-2-红黑树的插入" class="headerlink" title="7.3.3_2_红黑树的插入"></a>7.3.3_2_红黑树的插入</h3><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://pic1.imgdb.cn/item/68bff6af58cb8da5c89142a7.png"><br><img src="https://pic1.imgdb.cn/item/68bffd1e58cb8da5c8915e95.png"><br><img src="https://pic1.imgdb.cn/item/68bffd3858cb8da5c8915ebc.png"><br><img src="https://pic1.imgdb.cn/item/68bffd4758cb8da5c8915ed9.png"><br><img src="https://pic1.imgdb.cn/item/68bffd5c58cb8da5c8915efb.png"><br><img src="https://pic1.imgdb.cn/item/68bffd6d58cb8da5c8915f12.png"><br><img src="https://pic1.imgdb.cn/item/68bffd7958cb8da5c8915f29.png"><br><img src="https://pic1.imgdb.cn/item/68bffd8658cb8da5c8915f3e.png"><br><img src="https://pic1.imgdb.cn/item/68bffd8e58cb8da5c8915f49.png"><br><img src="https://pic1.imgdb.cn/item/68bffd9658cb8da5c8915f59.png"><br><img src="https://pic1.imgdb.cn/item/68bffde758cb8da5c8915fdb.png"><br><img src="https://pic1.imgdb.cn/item/68bffe0758cb8da5c891600d.png"><br><img src="https://pic1.imgdb.cn/item/68bffe0f58cb8da5c891601d.png"><br><img src="https://pic1.imgdb.cn/item/68bffe1858cb8da5c891602f.png"><br><img src="https://pic1.imgdb.cn/item/68bffe3858cb8da5c8916066.png"><br><img src="https://pic1.imgdb.cn/item/68bffe4658cb8da5c891607e.png"><br><img src="https://pic1.imgdb.cn/item/68bffe5e58cb8da5c89160a0.png"><br><img src="https://pic1.imgdb.cn/item/68bffe6a58cb8da5c89160ac.png"><br><img src="https://pic1.imgdb.cn/item/68bffe7858cb8da5c89160c5.png"><br><img src="https://pic1.imgdb.cn/item/68bffe8158cb8da5c89160d6.png"><br><img src="https://pic1.imgdb.cn/item/68bffe8d58cb8da5c89160e7.png"></h2><h2 id="与“黑高”相关的推论思考：根结点黑高为h的红黑树，内部结点数（关键字）至少有多少个回答：内部结点数最少的情况——总共h层黑结点的满树形态结论：若根结点黑高为h，内部结点数（关键字）最少有2-h-1个"><a href="#与“黑高”相关的推论思考：根结点黑高为h的红黑树，内部结点数（关键字）至少有多少个回答：内部结点数最少的情况——总共h层黑结点的满树形态结论：若根结点黑高为h，内部结点数（关键字）最少有2-h-1个" class="headerlink" title="- 与“黑高”相关的推论思考：根结点黑高为h的红黑树，内部结点数（关键字）至少有多少个回答：内部结点数最少的情况——总共h层黑结点的满树形态结论：若根结点黑高为h，内部结点数（关键字）最少有2^h-1个"></a><img src="https://pic1.imgdb.cn/item/68bffea858cb8da5c8916109.png"><br>- <strong>与“黑高”相关的推论</strong><br>思考：根结点黑高为h的红黑树，内部结点数（关键字）<font color=red>至少</font>有多少个<br>回答：内部结点数<font color=red>最少</font>的情况——总共h层黑结点的满树形态<br>结论：<font color=red>若根结点黑高为h，内部结点数（关键字）最少有2^h-1个</font></h2><p>性质1证明：任何一条查找失败路径上黑结点数量都相同，而路径上不能连续出现两个红结点，即红结点只能穿插在各个黑结点中间<br>性质2证明：若红黑树总高度&#x3D;h，则根结点黑高&gt;&#x3D;h&#x2F;2，因此内部结点数n&gt;&#x3D;$2^{h&#x2F;2}-1$，由此推出h&lt;&#x3D;2 $log_2(n+1)$</p>
+<h3 id="7-3-3-3-红黑树的删除（难）"><a href="#7-3-3-3-红黑树的删除（难）" class="headerlink" title="7.3.3_3_红黑树的删除（难）"></a>7.3.3_3_红黑树的删除（难）</h3><p><strong>重要考点：</strong></p>
+<ol>
+<li>红黑树删除操作的时间复杂度&#x3D;O($log_2(n)$)</li>
+<li>在红黑树中删除结点的处理方式和“<strong>二叉排序树的删除</strong>”一样</li>
+<li>按2删除结点后，可能破坏“红黑树特性”，此时需要“<strong>调整结点颜色、位置</strong>”，使其再次满足“红黑树特性”</li>
+</ol>
+<h3 id="7-4-1-1-B树"><a href="#7-4-1-1-B树" class="headerlink" title="7.4.1_1 B树"></a>7.4.1_1 B树</h3><ul>
+<li><strong>五叉查找树</strong><br><img src="https://pic1.imgdb.cn/item/68c1646d58cb8da5c89898c7.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//5叉排序树的结点定义</span><br><span class="line">struct Node&#123;</span><br><span class="line">    ElemType keys[4];//最多4个关键字</span><br><span class="line">    struct Node * child[5]；//最多5个孩子</span><br><span class="line">    int num;//结点中有几个关键字</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><strong>如何保证查找效率</strong><br>若每个结点内关键字太少，导致树变高，要查更多层结点，效率低<br><strong>策略</strong>：m叉查找树中，规定<font color=red>除了根结点外</font>，任何结点<font color=red>至少有[m&#x2F;2]（向上取整）个分叉</font>，即至少含有<font color=red>[m&#x2F;2]-1（向上取整）个关键字</font><br>eg：对于5叉排序树，规定除了根结点外，任何结点都至少有3个分叉，2个关键字<br><img src="https://pic1.imgdb.cn/item/68c168e058cb8da5c8989d56.png"><br><strong>策略</strong>：m叉查找树中，规定<font color=red>对于任何一个结点，其所有子树的高度都要相同</font></li>
+<li><strong>B树</strong><br><img src="https://pic1.imgdb.cn/item/68c1696958cb8da5c8989d98.png"><br><img src="https://pic1.imgdb.cn/item/68c16ac458cb8da5c8989f38.png"><br><img src="https://pic1.imgdb.cn/item/68c16b1a58cb8da5c8989fcb.png"></li>
+<li><strong>B树的高度</strong><br>最小高度：<br><img src="https://pic1.imgdb.cn/item/68c16d8158cb8da5c898a1ad.png"><br>最大高度思路一：<br><img src="https://pic1.imgdb.cn/item/68c16e3d58cb8da5c898a211.png"><br>最大高度思路二：<br><img src="https://pic1.imgdb.cn/item/68c16f5258cb8da5c898a2af.png"></li>
+</ul>
+<h3 id="7-4-1-2-B树的插入删除"><a href="#7-4-1-2-B树的插入删除" class="headerlink" title="7.4.1_2_B树的插入删除"></a>7.4.1_2_B树的插入删除</h3><ul>
+<li><p><strong>B树的插入</strong><br><img src="https://pic1.imgdb.cn/item/68c1715658cb8da5c898a3bc.png"><br><img src="https://pic1.imgdb.cn/item/68c1716958cb8da5c898a3c5.png"><br><font color=red>新元素一定是插入到最底层“终端结点”，用“查找”来确定插入位置</font><br>如果90插入到根结点，则各个失败结点不属于同一层<br><img src="https://pic1.imgdb.cn/item/68c171fc58cb8da5c898a483.png"><br><img src="https://pic1.imgdb.cn/item/68c1720a58cb8da5c898a48e.png"><br><img src="https://pic1.imgdb.cn/item/68c1726b58cb8da5c898a4bf.png"><br><img src="https://pic1.imgdb.cn/item/68c1729258cb8da5c898a4de.png"><br><img src="https://pic1.imgdb.cn/item/68c172d558cb8da5c898a503.png"><br><img src="https://pic1.imgdb.cn/item/68c172e358cb8da5c898a50a.png"><br><img src="https://pic1.imgdb.cn/item/68c1735158cb8da5c898a553.png"></p>
+</li>
+<li><p><strong>B树的删除</strong><br>若被删除关键字在<font color=red>终端结点</font>，则直接删除该关键字（要注意结点关键字个数是否低于下限[m&#x2F;2]-1）<br>若被删除关键字在<font color=red>非终端结点</font>，则用直接前驱或直接后继来替代被删除的关键字<br><font color=red>直接前驱</font>：当前关键字<font color=red>左侧指针所指子树中“最右下”的元素</font><br><font color=red>直接后继</font>：当前关键字<font color=red>右侧指针所指子树中“最左下”的元素</font></p>
+<blockquote>
+<p>对非终端结点关键字的删除，必然可以转化为对终端结点的删除操作<br>向右兄弟借：</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="向左兄弟借：兄弟不够借-合并："><a href="#向左兄弟借：兄弟不够借-合并：" class="headerlink" title="向左兄弟借：兄弟不够借-&gt;合并："></a><img src="https://pic1.imgdb.cn/item/68c174f858cb8da5c898a790.png"><br><img src="https://pic1.imgdb.cn/item/68c1750458cb8da5c898a7a1.png"><br>向左兄弟借：<br><img src="https://pic1.imgdb.cn/item/68c1756558cb8da5c898a846.png"><br><img src="https://pic1.imgdb.cn/item/68c1757958cb8da5c898a875.png"><br>兄弟不够借-&gt;合并：<br><img src="https://pic1.imgdb.cn/item/68c175b858cb8da5c898a913.png"><br><img src="https://pic1.imgdb.cn/item/68c175e958cb8da5c898a989.png"><br><img src="https://pic1.imgdb.cn/item/68c1760b58cb8da5c898a9d3.png"><br><img src="https://pic1.imgdb.cn/item/68c1763b58cb8da5c898aa1f.png"></h2><p><img src="https://pic1.imgdb.cn/item/68c1767758cb8da5c898aab0.png"></p>
+<h3 id="7-4-2-B-树"><a href="#7-4-2-B-树" class="headerlink" title="7.4.2_B+树"></a>7.4.2_B+树</h3><h2 id="B-树的查找1-多路查找2-顺序查找-B-树-vs-B树1-m阶B-树：结点中的n个关键字对应n棵子树m阶B树：结点中的n个关键字对应n-1棵子树2-m阶B树：根结点的关键字数-n-in-1-m-1-其他结点的关键字数-n-in-m-2-1-m-1-m阶B-树：根结点的关键字数-n-in-1-m-其他结点的关键字数-n-in-m-2-m-3-m阶B-树：在B-树中，叶结点包含全部关键字，非叶结点中出现过的关键字也会出现在叶结点中m阶B树：在B树中，各结点中包含的关键字是不重复的4-m阶B-树：在B-树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址m阶B树：B树的结点中都包含了关键字对应的记录的存储地址"><a href="#B-树的查找1-多路查找2-顺序查找-B-树-vs-B树1-m阶B-树：结点中的n个关键字对应n棵子树m阶B树：结点中的n个关键字对应n-1棵子树2-m阶B树：根结点的关键字数-n-in-1-m-1-其他结点的关键字数-n-in-m-2-1-m-1-m阶B-树：根结点的关键字数-n-in-1-m-其他结点的关键字数-n-in-m-2-m-3-m阶B-树：在B-树中，叶结点包含全部关键字，非叶结点中出现过的关键字也会出现在叶结点中m阶B树：在B树中，各结点中包含的关键字是不重复的4-m阶B-树：在B-树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址m阶B树：B树的结点中都包含了关键字对应的记录的存储地址" class="headerlink" title="- B+树的查找1. 多路查找2. 顺序查找- B+树 vs B树1. m阶B+树：结点中的n个关键字对应n棵子树m阶B树：结点中的n个关键字对应n+1棵子树2. m阶B树：根结点的关键字数$n\in[1,m-1]$其他结点的关键字数$n\in[[m&#x2F;2]-1,m-1]$m阶B+树：根结点的关键字数$n\in[1,m]$其他结点的关键字数$n\in[[m&#x2F;2],m]$3. m阶B+树：在B+树中，叶结点包含全部关键字，非叶结点中出现过的关键字也会出现在叶结点中m阶B树：在B树中，各结点中包含的关键字是不重复的4. m阶B+树：在B+树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址m阶B树：B树的结点中都包含了关键字对应的记录的存储地址"></a><img src="https://pic1.imgdb.cn/item/68c1788258cb8da5c898af5f.png"><br>- <strong>B+树的查找</strong><br>1. 多路查找<br><img src="https://pic1.imgdb.cn/item/68c17a3058cb8da5c898b217.png"><br>2. 顺序查找<br><img src="https://pic1.imgdb.cn/item/68c17c8758cb8da5c898b482.png"><br>- <strong>B+树 vs B树</strong><br>1. <strong>m阶B+树</strong>：结点中的n个关键字对应n棵子树<br><strong>m阶B树</strong>：结点中的n个关键字对应n+1棵子树<br>2. <strong>m阶B树</strong>：根结点的关键字数$n\in[1,m-1]$<br>其他结点的关键字数$n\in[[m&#x2F;2]-1,m-1]$<br><strong>m阶B+树</strong>：根结点的关键字数$n\in[1,m]$<br>其他结点的关键字数$n\in[[m&#x2F;2],m]$<br>3. <strong>m阶B+树</strong>：在B+树中，叶结点包含全部关键字，非叶结点中出现过的关键字也会出现在叶结点中<br><strong>m阶B树</strong>：在B树中，各结点中包含的关键字是不重复的<br>4. <strong>m阶B+树</strong>：在B+树中，叶结点包含信息，所有非叶结点仅起索引作用，非叶结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址<br><strong>m阶B树</strong>：B树的结点中都包含了关键字对应的记录的存储地址</h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="https://pic1.imgdb.cn/item/68c180ad58cb8da5c898b92c.png"><br><img src="https://pic1.imgdb.cn/item/68c1812858cb8da5c898b98c.png"></h2><p><img src="https://pic1.imgdb.cn/item/68c1813658cb8da5c898b995.png"></p>
+<h3 id="7-5-1-散列表的基本概念"><a href="#7-5-1-散列表的基本概念" class="headerlink" title="7.5.1 散列表的基本概念"></a>7.5.1 散列表的基本概念</h3><ul>
+<li><strong>散列表、散列函数</strong><br><strong>散列表（哈希表，Hash Table）</strong>：是一种数据结构。<font color=red>特点是：可以根据数据元素的关键字计算出它在散列表的存储地址</font><br><strong>散列函数（哈希函数）</strong>：Addr&#x3D;H(key)建立了<font color=red>“关键字”-&gt;“存储地址”</font>的映射关系<br><font color=red>理想情况下，在散列表中查找一个元素的时间复杂度为O(1)</font></li>
+<li><strong>冲突、同义词</strong><br><strong>冲突（碰撞）</strong>：在散列表中插入一个数据元素时，需要根据关键字的值确定其存储地址，若该地址已经存储了其他元素，则称这种情况为“冲突（碰撞）”<br><strong>同义词</strong>：若不同的关键字通过散列函数映射到同一个存储地址，则称它们为“同义词”</li>
+<li><strong>如何减少冲突</strong><br>构造更适合的散列函数，让各个关键字尽可能地映射到不同的存储位置，从而减少“冲突”<ul>
+<li><strong>拉链法</strong><br>  <img src="https://pic1.imgdb.cn/item/68c905d0c5157e1a880a7e1e.png"></li>
+<li><strong>开放定址法</strong><br>  <img src="https://pic1.imgdb.cn/item/68c905ebc5157e1a880a7ec1.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="7-2-5-散列函数的构造"><a href="#7-2-5-散列函数的构造" class="headerlink" title="7.2.5 散列函数的构造"></a>7.2.5 散列函数的构造</h3><ul>
+<li><strong>设计散列函数时应该注意什么</strong><br><img src="https://pic1.imgdb.cn/item/68c906b8c5157e1a880a83e9.png"></li>
+<li><strong>除留余数法</strong><br><strong>H(key)&#x3D;key%p</strong><br>散列表长为m，<font color=red>取一个不大于m但最接近或等于m的质数p</font><br><strong>适用场景</strong>：较为通用，只要关键字是整数即可</li>
+</ul>
+<hr>
+<p><strong>拓展：为什么除留余数法要对质数取余</strong><br>原因：对质数取余，可以分布更均匀，从而减少冲突（取余运算会被“公因子”影响，参见《数论》）</p>
+<hr>
+<ul>
+<li><strong>直接定址法</strong><br><strong>H(key)&#x3D;key或H(key)&#x3D;a*key+b</strong><br>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。若关键字分布不连续，空位较多，则会造成存储空间的浪费<br><strong>适用场景</strong>：关键字分布基本连续</li>
+<li><strong>数字分析法</strong><br><img src="https://pic1.imgdb.cn/item/68c906b8c5157e1a880a83e9.png"></li>
+<li><strong>平方取中法</strong><br><img src="https://pic1.imgdb.cn/item/68c916c0c5157e1a880b0d4c.png"></li>
+</ul>
+<h3 id="7-5-3-1-处理冲突的方法-拉链法"><a href="#7-5-3-1-处理冲突的方法-拉链法" class="headerlink" title="7.5.3_1 处理冲突的方法_拉链法"></a>7.5.3_1 处理冲突的方法_拉链法</h3><h2 id="拉链法（又称链接法、链地址法）：把所有“同义词”存储在一个链表中-散列表的插入操作（拉链法解决冲突）考试时默认用头插法-散列表的查找操作（拉链法解决冲突）在分析查找长度时，通常只统计“关键字的对比次数”，而链表“空指针的对比次数”不计入查找长度-散列表的删除操作（拉链法解决冲突）Step1：根据散列函数计算目标元素的散列地址Step2：顺序查找散列地址对应的链表，若查找成功，将目标元素从链表中删除"><a href="#拉链法（又称链接法、链地址法）：把所有“同义词”存储在一个链表中-散列表的插入操作（拉链法解决冲突）考试时默认用头插法-散列表的查找操作（拉链法解决冲突）在分析查找长度时，通常只统计“关键字的对比次数”，而链表“空指针的对比次数”不计入查找长度-散列表的删除操作（拉链法解决冲突）Step1：根据散列函数计算目标元素的散列地址Step2：顺序查找散列地址对应的链表，若查找成功，将目标元素从链表中删除" class="headerlink" title="拉链法（又称链接法、链地址法）：把所有“同义词”存储在一个链表中- 散列表的插入操作（拉链法解决冲突）考试时默认用头插法- 散列表的查找操作（拉链法解决冲突）在分析查找长度时，通常只统计“关键字的对比次数”，而链表“空指针的对比次数”不计入查找长度- 散列表的删除操作（拉链法解决冲突）Step1：根据散列函数计算目标元素的散列地址Step2：顺序查找散列地址对应的链表，若查找成功，将目标元素从链表中删除"></a><font color=red>拉链法</font>（又称链接法、链地址法）：把所有“同义词”存储在一个链表中<br>- <strong>散列表的插入操作（拉链法解决冲突）</strong><br><img src="https://pic1.imgdb.cn/item/68c9189ec5157e1a880b1571.png"><br>考试时默认用头插法<br>- <strong>散列表的查找操作（拉链法解决冲突）</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c918f95ac5d.png" alt="1758009622146.png"><br>在分析查找长度时，通常只统计“关键字的对比次数”，而链表“空指针的对比次数”不计入查找长度<br>- <strong>散列表的删除操作（拉链法解决冲突）</strong><br>Step1：根据散列函数计算目标元素的散列地址<br>Step2：顺序查找散列地址对应的链表，若查找成功，将目标元素从链表中删除</h2><p><strong>拓展：插入操作的小优化</strong><br>新元素插入链表时，若能保持链表有序，可以略微提高“查找”效率</p>
+<h3 id="7-5-3-2-处理冲突的方法-开放定址法"><a href="#7-5-3-2-处理冲突的方法-开放定址法" class="headerlink" title="7.5.3_2 处理冲突的方法_开放定址法"></a>7.5.3_2 处理冲突的方法_开放定址法</h3><p><font color=red>开放定址法</font>：如果发生“冲突”，就给新元素找另一个空闲位置<br>为什么叫“开放定址”——一个散列地址，既对同义词开放，也对非同义词开放</p>
+<ul>
+<li><strong>开放定址法的基本原理</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c91c24a3a1d.png" alt="1758010431032.png"></li>
+<li><strong>线性探测法（插入、查找操作）</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c91dccbbefd.png" alt="1758010856611.png"></li>
+<li><strong>平方探测法（插入、查找操作）</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c91e3f1abf6.png" alt="1758010968189.png"></li>
+<li><strong>双散列法（插入、查找操作）</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c91ef622b65.png" alt="1758011154186.png"></li>
+<li><strong>伪随机序列法（插入、查找操作）</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c91f34eebd4.png" alt="1758011217165.png"></li>
+<li><strong>如何删除一个元素</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c92031768c2.png" alt="1758011470315.png"></li>
+<li><strong>关于删除操作</strong><br><img src="https://youke1.picui.cn/s1/2025/09/16/68c91ff9a22a0.png" alt="1758011413746.png"><br><font color=red>带来的问题：查找效率低下，散列表看起来很满，实则很空</font><br>Tips：可以不定期整理散列表内的数据<blockquote>
+<p>注：新元素也可以插入到已被“逻辑删除”的地址</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p><strong>拓展：“探测覆盖率”</strong></p>
+<ul>
+<li><strong>线性探测法</strong><br><img src="https://pic1.imgdb.cn/item/68c9222ac5157e1a880b6ad5.png"></li>
+<li><strong>平方探测法</strong><br><img src="https://pic1.imgdb.cn/item/68c92285c5157e1a880b7200.png"></li>
+<li><strong>双散列法</strong></li>
+<li><img src="https://pic1.imgdb.cn/item/68c92383c5157e1a880b8195.png"><br>若表长本身就是质数，一定跟任何一个小于它的数（1除外）互质</li>
+<li><strong>伪随机序列法的“探测覆盖率”</strong><br><img src="https://pic1.imgdb.cn/item/68c92450c5157e1a880b8b52.png"></li>
+</ul>
+<h3 id="7-5-4-散列查找的性能分析（以线性探测法为例）"><a href="#7-5-4-散列查找的性能分析（以线性探测法为例）" class="headerlink" title="7.5.4 散列查找的性能分析（以线性探测法为例）"></a>7.5.4 散列查找的性能分析（以线性探测法为例）</h3><p><img src="https://pic1.imgdb.cn/item/68c925e9c5157e1a880b9759.png"><br><img src="https://pic1.imgdb.cn/item/68c92657c5157e1a880b9a15.png"><br><strong>易错点</strong>：<br><img src="https://pic1.imgdb.cn/item/68c92741c5157e1a880ba35d.png"><br><font color=red>采用开放定址法时，删除一个元素是逻辑删除，而非物理删除！这一点将影响查找长度的计算</font></p>
+<ul>
+<li><strong>装填因子</strong><br><img src="https://pic1.imgdb.cn/item/68c92833c5157e1a880baef7.png"></li>
+<li><strong>聚集（堆积）现象</strong><br>在处理冲突的过程中，几个初始散列地址不同的元素争夺同一个后继散列地址的现象称作“聚集”（或称作“堆积”）<br><strong>线性探测法</strong>在发生冲突时，总是往后探测相邻的后一个单元，<strong>很容易造成</strong>同义词、非同义词的“<strong>聚集（堆积）</strong>”现象，<strong>从而影响查找效率，导致ASL提升</strong></li>
+<li><strong>使用“平方探测法”减少聚集现象</strong><br><img src="https://pic1.imgdb.cn/item/68c92ac1c5157e1a880bc7fd.png"></li>
+</ul>
+<h3 id="8-1-排序的基本概念"><a href="#8-1-排序的基本概念" class="headerlink" title="8.1_排序的基本概念"></a>8.1_排序的基本概念</h3><ul>
+<li><strong>排序算法的评价指标</strong><br>时间复杂度+空间复杂度、稳定性<br><img src="https://pic1.imgdb.cn/item/68c93a1ec5157e1a880ca523.png"><br>稳定的排序算法一定比不稳定的好？<br>不一定，看实际需求</li>
+<li><strong>排序算法的分类</strong><ul>
+<li><strong>内部排序</strong><br>  数据都在内存中（关注如何使算法时、空复杂度更低）</li>
+<li><strong>外部排序</strong><br>  数据太多，无法全部放入内存（还要关注如何使读&#x2F;写磁盘次数更少）</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-2-1-8-2-2-插入排序"><a href="#8-2-1-8-2-2-插入排序" class="headerlink" title="8.2.1+8.2.2_插入排序"></a>8.2.1+8.2.2_插入排序</h3><ul>
+<li><strong>算法实现</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//直接插入排序</span><br><span class="line">void InsertSort(int A[],int n)&#123;</span><br><span class="line">    int i,j,temp;</span><br><span class="line">    for(i=1;i&lt;n;i++)//将各元素插入已排好序的序列中</span><br><span class="line">        if(A[i]&lt;A[i-1])&#123;//若A[i]关键字小于前驱</span><br><span class="line">            temp=A[i];//temp暂存A[i]</span><br><span class="line">            for(j=i-1;j&gt;=0&amp;&amp;A[j]&gt;temp;--j)//检查所有前面已排好序的元素</span><br><span class="line">                A[j+1]=A[j];//所有大于temp的元素都向后挪位</span><br><span class="line">            A[j+1]=temp;//复制到插入位置</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<strong>带哨兵</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//直接插入排序（带哨兵）</span><br><span class="line">void InsertSort(int A[],int n)&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    for(i=2;i&lt;=n;i++)//依次将A[2]~A[n]插入到前面已排序序列</span><br><span class="line">        if(A[i]&lt;A[i-1])&#123;//若A[i]关键码小于其前驱，将A[i]插入有序表</span><br><span class="line">            A[0]=A[i];//复制为哨兵，A[0]不存放元素</span><br><span class="line">            for(j=i-1;A[0]&lt;A[j];--j)//从后往前查找待插入位置</span><br><span class="line">                A[j+1]=A[j];//向后挪位</span><br><span class="line">            A[j+1]=A[0];//复制到插入位置</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<strong>空间复杂度</strong>：O(1)<br><strong>时间复杂度</strong>：主要来自对比关键字、移动元素<br>若有n个元素，则需要n-1趟处理<br><strong>最好情况</strong>：原本就有序,O(n)<br><img src="https://pic1.imgdb.cn/item/68c9444bc5157e1a880cfeb7.png"><br><strong>最坏情况</strong>：原本为逆序,O(n²)<br><img src="https://pic1.imgdb.cn/item/68c94466c5157e1a880d0059.png"><br><strong>平均</strong>时间复杂度：O(n²)<br><strong>算法稳定性</strong>：稳定</li>
+<li><strong>优化——折半插入排序</strong><br><img src="https://pic1.imgdb.cn/item/68c947b5c5157e1a880d2827.png"><br><img src="https://pic1.imgdb.cn/item/68c9476fc5157e1a880d280f.png"><br>当low&gt;high时折半查找停止，应将[low,i-1]内的元素全部右移，并将A[0]复制到low所指位置<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//折半插入排序</span><br><span class="line">void InsertSort(int A[],int n)&#123;</span><br><span class="line">    int i,j,low,high,mid;</span><br><span class="line">    for(i=2;i&lt;=n;i++)&#123;//依次将A[2]~A[n]插入前面的已排序序列</span><br><span class="line">        A[0]=A[i];//将A[i]暂存到A[0]</span><br><span class="line">        low=1;high=i-1;//设置折半查找的范围</span><br><span class="line">        while(low&lt;=high)&#123;</span><br><span class="line">            mid=(low+high)/2;//取中间点</span><br><span class="line">            if(A[mid]&gt;A[0]) high=mid-1;//查找左半子表</span><br><span class="line">            else low=mid+1;//查找右半子表</span><br><span class="line">        &#125;</span><br><span class="line">        for(j=i-1;j&gt;=high+1;--j)</span><br><span class="line">            A[j+1]=A[j];//统一右移元素，空出插入位置</span><br><span class="line">        A[high+1]=A[0]//插入操作</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+时间复杂度依然是O(n²)</li>
+<li><strong>对链表进行插入排序</strong><br><img src="https://pic1.imgdb.cn/item/68c94aacc5157e1a880d33e1.png"></li>
+</ul>
+<h3 id="8-2-3-希尔排序"><a href="#8-2-3-希尔排序" class="headerlink" title="8.2.3_希尔排序"></a>8.2.3_希尔排序</h3><p>希尔排序：先追求表中元素部分有序，再逐渐逼近全局有序<br><img src="https://pic1.imgdb.cn/item/68c94ca1c5157e1a880d42c4.png"><br>希尔本人建议：每次将增量缩小一半</p>
+<ul>
+<li><strong>算法实现</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//希尔排序</span><br><span class="line">void ShellSort(int A[],int n)&#123;</span><br><span class="line">    int d,i,j;</span><br><span class="line">    //A[0]只是暂存单元，不是哨兵，当j&lt;=0时，插入位置已到</span><br><span class="line">    for(d=n/2;d&gt;=1;d=d/2)//步长变化</span><br><span class="line">        for(i=d+1;i&lt;=n;++i)</span><br><span class="line">            if(A[i]&lt;A[i-d])&#123;需将A[i]插入有序增量子表</span><br><span class="line">                A[0]=A[i];//暂存在A[0]</span><br><span class="line">                for(j=i-d;j&gt;0&amp;&amp;A[0]&lt;A[j];j-=d)</span><br><span class="line">                    A[j+d]=A[j];//记录后移，查找插入的位置</span><br><span class="line">                A[j+d]=A[0];//插入</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+此写法的++i说明不是一个子序列排完再排另一个子序列，而是逐步排完</li>
+<li><strong>算法性能分析</strong><br><strong>空间复杂度</strong>：O(1)<br><strong>时间复杂度</strong>：和增量序列$d_1$,$d_2$,$d_3$…的选择有关，目前<font color=red>无法用数学手段证明确切的时间复杂度</font><br>最坏时间复杂度为O(n²)，当n在某个范围内时，可达O(n¹·³)<br><img src="https://pic1.imgdb.cn/item/68c956ffc5157e1a880da787.png"></li>
+</ul>
+<h3 id="8-3-1-冒泡排序"><a href="#8-3-1-冒泡排序" class="headerlink" title="8.3.1_冒泡排序"></a>8.3.1_冒泡排序</h3><ul>
+<li><strong>算法实现</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//冒泡排序</span><br><span class="line">void BubbleSort(int A[],int n)&#123;</span><br><span class="line">    for(int i=0;i&lt;n-1;i++)&#123;</span><br><span class="line">        bool flag=false;//表示本趟冒泡是否发生交换的标志</span><br><span class="line">        for(int j=n-1;j&gt;i;j--)//一趟冒泡过程</span><br><span class="line">            if(A[j-1]&gt;A[j])&#123;//若为逆序</span><br><span class="line">                swap(A[j-1],A[j]);//交换</span><br><span class="line">                flag=true</span><br><span class="line">            &#125;</span><br><span class="line">        if(flag==false)</span><br><span class="line">            return;//本趟遍历后没有发生交换，说明表已经有序</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<strong>A[j-1]&gt;A[j]没有等号</strong>——只有A[j-1]&gt;A[j]时才交换，因此算法是稳定的<br><strong>j&gt;i</strong>——i所指位置之前的元素都已有序<br><strong>bool flag</strong>——如果某一趟排序过程中未发生“交换”，则算法可提前结束</li>
+<li><strong>算法性能分析</strong><br><strong>空间复杂度</strong>：O(1)<br><strong>时间复杂度</strong><br>最好情况（有序）：O(n)<br>最坏情况（逆序）：<img src="https://pic1.imgdb.cn/item/68c959a5c5157e1a880dc082.png"><br>每次交换都需要移动元素3次<br>平均时间复杂度&#x3D;O(n²)<blockquote>
+<p>注：冒泡排序同样适用于链表</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="8-3-2-快速排序"><a href="#8-3-2-快速排序" class="headerlink" title="8.3.2_快速排序"></a>8.3.2_快速排序</h3><p><img src="https://pic1.imgdb.cn/item/68c95bf6c5157e1a880dd936.png"><br><img src="https://pic1.imgdb.cn/item/68c95ebfc5157e1a880dedb2.png"><br><strong>过程</strong>：<br>开始时low和high指针分别指向最左和最右，选取第一个元素为基准（枢轴），提出来，此时low指针指向空，看high指针，若high指针所指元素比基准小，该元素移到low所指位置，low指针右移（否则high指针一直左移）…最终，当low&#x3D;&#x3D;high时一次划分结束<br><strong>左边放小于，右边放大于等于</strong></p>
+<ul>
+<li><strong>算法实现</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//快速排序</span><br><span class="line">void QuickSort(int A[],int low,int high)&#123;</span><br><span class="line">    if(low&lt;high)&#123;//递归跳出的条件</span><br><span class="line">        int pivotpos=Partition(A,low,high);//划分</span><br><span class="line">        QuickSort(A,low,pivotpos-1);//划分左子表</span><br><span class="line">        QuickSort(A,pivotpos+1,high);//划分右子表</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//用第一个元素将待排序序列划分成左右两个部分</span><br><span class="line">int Partition(int A[],int low,int high)&#123;</span><br><span class="line">    int pivot=A[low];//第一个元素作为枢轴</span><br><span class="line">    while(low&lt;high)&#123;//用low、high搜索枢轴的最终位置</span><br><span class="line">        while(low&lt;high&amp;&amp;A[high]&gt;=pivot) --high;</span><br><span class="line">        A[low]=A[high];//比枢轴小的元素移动到左端</span><br><span class="line">         while(low&lt;high&amp;&amp;A[low]&lt;=pivot) ++low;</span><br><span class="line">        A[high]=A[low];//比枢轴大的元素移动到右端</span><br><span class="line">    &#125;</span><br><span class="line">    A[low]=pivot;//枢轴元素存放到最终位置</span><br><span class="line">    return low;//返回存放枢轴的最终位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>算法效率分析</strong><br><strong>时间复杂度</strong>&#x3D;O(n*递归层数)<br><strong>空间复杂度</strong>&#x3D;O(递归层数)<br><img src="https://pic1.imgdb.cn/item/68c9670ec5157e1a880e05cb.png"><br><font color=red>最好</font>时间复杂度&#x3D;O(nlog₂(n))<br><font color=red>最坏</font>时间复杂度&#x3D;O(n²)<br><strong>平均时间复杂度</strong>&#x3D;O(nlog₂(n))<br><font color=red>最好</font>空间复杂度&#x3D;O(log₂(n))<br><font color=red>最坏</font>空间复杂度&#x3D;O(n)</li>
+<li><strong>比较好的情况</strong><br><img src="https://pic1.imgdb.cn/item/68c9682ac5157e1a880e0df0.png"></li>
+<li><strong>比较坏的情况</strong><br><img src="https://pic1.imgdb.cn/item/68c9683dc5157e1a880e0e36.png"><blockquote>
+<p>快速排序是所有内部排序算法中平均性能最优的排序算法</p>
+</blockquote>
+</li>
+<li><strong>稳定性</strong><br>不稳定</li>
+</ul>
+<h3 id="8-4-1-简单选择排序"><a href="#8-4-1-简单选择排序" class="headerlink" title="8.4.1_简单选择排序"></a>8.4.1_简单选择排序</h3><p>选择排序——简单选择排序、堆排序<br>选择排序：每一趟在待排元素中选取关键字最小（或最大）的元素加入有序子序列</p>
+<ul>
+<li><strong>算法实现</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//简单选择排序</span><br><span class="line">void SelectSort(int A[],int n)&#123;</span><br><span class="line">    for(int i=0;i&lt;n-1;i++)&#123;</span><br><span class="line">        int min=i;</span><br><span class="line">        for(int j=i+1;i&lt;n;j++)</span><br><span class="line">            if(A[j]&lt;A[min]) min=j;</span><br><span class="line">        if(min!=i) swap(A[i],A[min]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>算法性能分析</strong><br><strong>空间复杂度</strong>&#x3D;O(1)<br><strong>时间复杂度</strong>&#x3D;O(n²)<br>无论有序、逆序、还是乱序，一定需要n-1趟处理<br>总共需要对比关键字(n-1)+(n-2)+…+1&#x3D;n(n-1)&#x2F;2次<br>元素交换次数&lt;n-1</li>
+<li><strong>稳定性</strong><br>不稳定</li>
+<li><strong>适用性</strong><br>既可以用于顺序表，也可用于链表</li>
+</ul>
+<h3 id="8-4-2-1-堆排序"><a href="#8-4-2-1-堆排序" class="headerlink" title="8.4.2_1 堆排序"></a>8.4.2_1 堆排序</h3><ul>
+<li><strong>什么是“堆（Heap）”</strong><br><img src="https://pic1.imgdb.cn/item/68ca1006c5157e1a880f3b43.png"></li>
+<li><strong>如何基于“堆”进行排序</strong><br>堆顶元素关键字最大<br>若能把数组整理成堆形式，可简化选择排序</li>
+<li><strong>建立大根堆</strong><br><strong>思路</strong>：把所有非终端结点都检查一遍，是否满足大根堆的要求，如果不满足，则进行调整<br>在顺序存储的完全二叉树中，<font color=red>非终端结点编号i&lt;&#x3D;[n&#x2F;2]</font><br><img src="https://pic1.imgdb.cn/item/68ca1114c5157e1a880f499f.png"><br>从后往前检查非终端结点是否满足大根堆的要求，<font color=red>若不满足，将当前结点与更大的一个孩子互换</font><br><img src="https://pic1.imgdb.cn/item/68ca11bbc5157e1a880f5156.png"><br><code>若元素互换破坏的下一级的堆，则采用相同的方法继续往下调整（小元素不断“下坠”）</code><br><strong>代码实现</strong>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//建立大根堆</span><br><span class="line">void BuildMaxHeap(int A[],int len)&#123;</span><br><span class="line">    for(int i=len/2;i&gt;0;i--)//从后往前调整所有非终端结点</span><br><span class="line">        HeadAdjust(A,i,len);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//将以k为根的子树调整为大根堆</span><br><span class="line">void HeadAdjust(int A[],int k,int len)&#123;</span><br><span class="line">    A[0]=A[k];//A[0]暂存子树的根结点</span><br><span class="line">    for(int i=2*k;i&lt;=len;i*=2)&#123;//沿key较大的子结点向下筛选</span><br><span class="line">        if(i&lt;len&amp;&amp;A[i]&lt;A[i+1])</span><br><span class="line">            i++;//取key较大的子结点的下标</span><br><span class="line">        if(A[0]&gt;=A[i]) break;//筛选结束</span><br><span class="line">        else&#123;</span><br><span class="line">            A[k]=A[i];//将A[i]调整到双亲结点上</span><br><span class="line">            k=i;//修改k值，以便继续向下筛选</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    A[k]=A[0];//被筛选结点的值放入最终位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>基于大根堆进行排序</strong><br><img src="https://pic1.imgdb.cn/item/68ca168bc5157e1a880f984b.png"><br><img src="https://pic1.imgdb.cn/item/68ca171dc5157e1a880f9e18.png"><br><strong>代码实现</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//建立大根堆</span><br><span class="line">void BuildMaxHeap(int A[],int len)</span><br><span class="line"></span><br><span class="line">//将以k为根的子树调整为大根堆</span><br><span class="line">void HeadAdjust(int A[],int k,int len)</span><br><span class="line"></span><br><span class="line">//堆排序的完整逻辑</span><br><span class="line">void HeapSort(int A[],int len)&#123;</span><br><span class="line">    BuildMaxHeap(A,len);//初始建堆</span><br><span class="line">    for(int i=len;i&gt;1;i--)&#123;//n-1趟的交换和建堆过程</span><br><span class="line">        swap(A[i],A[1]);//堆顶元素和堆底元素交换</span><br><span class="line">        HeadAdjust(A,1,i-1);//把剩余的待排序元素整理</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>算法效率分析</strong><br><img src="https://pic1.imgdb.cn/item/68ca1ba6c5157e1a880fbd7b.png"><br><img src="https://pic1.imgdb.cn/item/68ca1cadc5157e1a880fc2dc.png"><br><img src="https://pic1.imgdb.cn/item/68ca1cbbc5157e1a880fc2ff.png"><br><strong>建堆的过程，关键字对比次数不超过4n，建堆复杂度&#x3D;O(n)</strong></li>
+<li><strong>稳定性</strong><br>堆排序是<font color=red>不稳定</font>的</li>
+</ul>
+<h3 id="8-4-2-2-堆的插入删除"><a href="#8-4-2-2-堆的插入删除" class="headerlink" title="8.4.2_2_堆的插入删除"></a>8.4.2_2_堆的插入删除</h3><ul>
+<li><strong>在堆中插入新元素</strong><br>对于<strong>小</strong>根堆，新元素放到表尾，与父结点对比，若<strong>新元素</strong>比父结点<strong>更小</strong>，则将二者互换。新元素就这样一路“<strong>上升</strong>”，直到无法继续上升为止</li>
+<li><strong>在堆中删除元素</strong><br>被删除的元素<strong>用堆底元素替代</strong>，然后让该元素不断“<strong>下坠</strong>”，直到无法下坠为止<blockquote>
+<p>注意关键字的对比次数</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" data-id="cmh7rsi3100036kuv9ayjbl0w" data-title="数据结构" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/10/13/web%E5%BC%80%E5%8F%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          web开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机组成原理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">October 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/10/26/java/">Java</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/13/web%E5%BC%80%E5%8F%91/">web开发</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
